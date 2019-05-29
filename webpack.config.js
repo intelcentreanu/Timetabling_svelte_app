@@ -1,11 +1,12 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+require('@babel/polyfill');
 
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 module.exports = {
 	entry: {
-		bundle: ['./src/main.js']
+		bundle: ['@babel/polyfill','./src/main.js']
 	},
 	resolve: {
 		extensions: ['.mjs', '.js', '.svelte']
@@ -20,13 +21,21 @@ module.exports = {
 			{
 				test: /\.svelte$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'svelte-loader',
-					options: {
-						emitCss: true,
-						hotReload: true
-					}
-				}
+				use: [
+			{
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+			},
+			{
+                loader: 'svelte-loader',
+                options: {
+                    emitCss: true,
+                    hotReload: true
+                }}
+			]
+
 			},
 			{
 				test: /\.css$/,
@@ -38,7 +47,17 @@ module.exports = {
 					prod ? MiniCssExtractPlugin.loader : 'style-loader',
 					'css-loader'
 				]
-			}
+			},
+            {
+                test: /\.m?js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+
 		]
 	},
 	mode,
