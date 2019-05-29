@@ -1,64 +1,21 @@
-# svelte app
+# timetabling app
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template-webpack.
+This svelte web app is for the timetabling project and is used for collating the availibility of staff.
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+The build process happens through webpack.
 
-```bash
-npx degit sveltejs/template-webpack svelte-app
-cd svelte-app
-```
+Babel is the Transpiler
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+## Code info
+The project’s important data is build on two arrays:
+* Data – contains the current reason code as to why they aren’t available .
+* reasonList – contains the current reason as to why they aren’t available.
 
+Note, reason and code are not one-to-one as the other reason has a text entry box, not a predefined reason.
 
-## Get started
+Both arrays represent the week, within in each array are 5 arrays(one for each weekday), with 13 entries representing hourl blocks from 8am to 9pm.
 
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start webpack:
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and the page should reload with your changes.
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
+## Audience information
+<p> First, select the reason why you are unavailable. If it is other, write the time slot specific reason before proceding.</p>
+<p> Then, click on the relevant time slot.</p>
+<p><u>Hint</u> if you want to select an entire day or time slot, click the relevant header on the table.</p>

@@ -267,11 +267,6 @@ height: 100%;
 
 </style>
 <div class="all">
-<div class="head">
-<p> First, select the reason why you are unavailable. If it is other, write the time slot specific reason before proceding.</p>
-<p> Then, click on the relevant time slot.</p>
-<p><u>Hint</u> if you want to select an entire day or time slot, click the relevant header on the table.</p>
-</div>
 <div class="list">
 <label>
    <input type=radio bind:group={chosen} value={reasons[0].label}>
