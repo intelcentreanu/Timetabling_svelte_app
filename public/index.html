@@ -12,23 +12,23 @@
 </head>
 
 <body>
-<div id="main"></div>
 <script src='bundle.js'></script>
+<div id="main"></div>
 <script>
-(function(data) {
-    const app = new Timetable({
-            target: document.querySelector("#" + data.id),
-            data: data.data
-             });
+    		(function(data) {
+    			const timetabling = new App({
+                    target: document.querySelector("#" + data.id),
+                    props: data.data
+                });
 
-    window.$app = app;
-     })({
-         id: "main",
-         data: {
-             data:[["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]],
-             reasonList:[["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""]]
+                window.$timetabling = timetabling;
+            })({
+                id: "main",
+                data: {reasonLetter: [["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]],
+                       reasonList:[["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""]]
 }
-  });
-</script>
+    		})
+    	</script>
+
 </body>
 </html>
