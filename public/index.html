@@ -12,6 +12,23 @@
 </head>
 
 <body>
+<div id="main"></div>
 <script src='bundle.js'></script>
+<script>
+(function(data) {
+    const app = new Timetable({
+            target: document.querySelector("#" + data.id),
+            data: data.data
+             });
+
+    window.$app = app;
+     })({
+         id: "main",
+         data: {
+             data:[["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]],
+             reasonList:[["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""]]
+}
+  });
+</script>
 </body>
 </html>

@@ -1,11 +1,6 @@
 <script>
-export let name;
-"use strict";
-
-
-var data = [["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]];
-var reasonList = [["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""]];
-
+export let data;
+export let reasonList;
 function clear() {
   clearAllColours();
   data = [["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]];
@@ -59,6 +54,8 @@ function getId(x, y) {
 }
 
 function addVal(x, y,colour=false) {
+    console.log("Reason List " + reasonList);
+    console.log("Data code list" + data);
   if (data[x][y] === "none") {
     document.getElementById(getId(x, y)).style.backgroundColor = colourDict[chosen];
     data[x][y] = chosen;
@@ -155,7 +152,7 @@ radioList  {
     height: 100%;
 }
 input[type=radio] {
-    width: 5%;
+    width: 3%;
     height: 1.5em;
 }
 
@@ -198,6 +195,7 @@ dataTable{
     height:80%;
     width:100%;
     background-color:#ccc;
+    padding:0px;
 
 }
 
@@ -211,7 +209,7 @@ calendar{
   flex-direction: row;
   flex:auto;
   width:100%;
-  padding: 0;
+  margin:0px;
   list-style: none;
 
 }
