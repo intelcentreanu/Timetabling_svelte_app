@@ -1,5 +1,5 @@
 <script>
-
+import "@babel/polyfill";
 export let reasonList;
 export let reasonLetter;
 console.log(reasonList);

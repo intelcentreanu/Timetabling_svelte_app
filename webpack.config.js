@@ -6,7 +6,7 @@ const prod = mode === 'production';
 
 module.exports = {
 	entry: {
-		bundle: ['@babel/polyfill','./src/main.js']
+		bundle: ['@babel/polyfill','./src/App.svelte']
 	},
 	resolve: {
 		extensions: ['.mjs', '.js', '.svelte']
@@ -14,8 +14,10 @@ module.exports = {
 	output: {
 		path: __dirname + '/public',
 		filename: '[name].js',
-		chunkFilename: '[name].[id].js'
-	},
+		chunkFilename: '[name].[id].js',
+		library:'App',
+        libraryExport: 'default'
+    },
 	module: {
 		rules: [
 			{
