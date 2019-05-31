@@ -1,8 +1,19 @@
 <script>
 import "@babel/polyfill";
+import {onMount} from 'svelte';
 export let reasonList;
 export let reasonLetter;
-console.log(reasonList);
+
+onMount(()=>{
+    reasonLetter.forEach((day,indexX) =>{
+        day.forEach((slot,indexY) =>{
+            document.getElementById(getId(indexX, indexY)).style.backgroundColor = colourDict[slot];
+
+        })
+    })
+
+})
+
 function clear() {
   clearAllColours();
   reasonLetter = [["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]];
@@ -36,7 +47,8 @@ var colourDict = {
   "P": "#F20D0D",
   "I": "#2CFF1C",
   "U": "#FFFF00",
-  "O": "#FF871C"
+  "O": "#FF871C",
+  "none":"#fff"
 };
 
 function getColour(c) {
@@ -297,7 +309,7 @@ button {
 </div>
 
 <div class =" dataTable">
-<ul class =" fix flex-container calendar" >
+<ul class =" flex-container calendar"  style="padding: 0;">
       <button class="nothing"></button>
       <button class="day" on:click="{() => wholeDay(0)}">Monday</button>
       <button class="day" on:click="{() => wholeDay(1)}">Tuesday</button>
@@ -305,7 +317,7 @@ button {
       <button class="day" on:click="{() => wholeDay(3)}">Thursday</button>
       <button class="day" on:click="{() => wholeDay(4)}">Friday</button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0; margin: 0; padding-: 0px;">
+<ul class =" flex-container calendar" style="padding: 0;">
 <button class="time" style="padding: 0; " on:click ="{() => wholeHour(0) }" >8am-9am</button>
 <button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" id ="0a"> {showVal(reasonLetter[0][0])} </button>
 <button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" id ="1a"> {showVal(reasonLetter[1][0])} </button>

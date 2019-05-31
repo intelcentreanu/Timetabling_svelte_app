@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5155ce8a-17c4-4923-8a6d-bab32660ffc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/changeTable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
     </list>
@@ -49,7 +47,7 @@
         <counts>
           <entry key="browserslistrc" value="3" />
           <entry key="css" value="2" />
-          <entry key="html" value="5" />
+          <entry key="html" value="6" />
           <entry key="js" value="9" />
           <entry key="json" value="2" />
           <entry key="md" value="1" />
@@ -65,18 +63,18 @@
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Svelte" value="10" />
+          <entry key="Svelte" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="browserslistrc" value="1" />
-          <entry key="html" value="746" />
+          <entry key="html" value="751" />
           <entry key="js" value="738" />
           <entry key="json" value="2" />
           <entry key="md" value="295" />
-          <entry key="svelte" value="523" />
-          <entry key="txt" value="305" />
+          <entry key="svelte" value="647" />
+          <entry key="txt" value="348" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -84,8 +82,8 @@
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="738" />
           <entry key="Markdown" value="295" />
-          <entry key="PLAIN_TEXT" value="306" />
-          <entry key="Svelte" value="1269" />
+          <entry key="PLAIN_TEXT" value="349" />
+          <entry key="Svelte" value="1398" />
         </counts>
       </usages-collector>
     </session>
@@ -93,25 +91,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="20" selection-start-line="1" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/global.css">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="299" column="17" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
+            <state relative-caret-position="272">
+              <caret line="319" column="56" selection-start-line="319" selection-start-column="56" selection-end-line="319" selection-end-column="56" />
               <folding>
+                <element signature="e#9#34#0#HTML" expanded="true" />
                 <element signature="n#style#0;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -136,45 +126,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/bundle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.browserslistrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/babel.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -206,6 +169,7 @@
       <find>reasonLis</find>
       <find>App</find>
       <find>radioLis</find>
+      <find>colourDic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -223,8 +187,8 @@
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/changeTable.html" />
-        <option value="$PROJECT_DIR$/src/App.svelte" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/App.svelte" />
       </list>
     </option>
   </component>
@@ -326,7 +290,7 @@
       <updated>1559103087493</updated>
       <workItem from="1559103088858" duration="11654000" />
       <workItem from="1559272635245" duration="8645000" />
-      <workItem from="1559281610180" duration="3300000" />
+      <workItem from="1559281610180" duration="3857000" />
     </task>
     <task id="LOCAL-00001" summary="edited readme - removed intro lines">
       <created>1559107699674</created>
@@ -356,17 +320,23 @@
       <option name="project" value="LOCAL" />
       <updated>1559280762427</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="michael's changes inserted&#10;--padding broken">
+      <created>1559285032327</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559285032327</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23599000" />
+    <option name="totallyTimeSpent" value="24156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16280295" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16280295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -380,7 +350,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.27410617" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.27410617" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -398,7 +368,8 @@
     <MESSAGE value="currenly working when set up done in main.js" />
     <MESSAGE value="All working,&#10;&#10;Issue of template literal resolved,&#10;Can feed in data from index.html&#10;babel filling&#10;webpack compiling&#10;App importing into index.html" />
     <MESSAGE value="All working,&#10;&#10;Issue of template literal resolved,&#10;Can feed in data from index.html&#10;babel filling&#10;webpack compiling&#10;App importing into index.html&#10;&#10;Now swapping axis" />
-    <option name="LAST_COMMIT_MESSAGE" value="All working,&#10;&#10;Issue of template literal resolved,&#10;Can feed in data from index.html&#10;babel filling&#10;webpack compiling&#10;App importing into index.html&#10;&#10;Now swapping axis" />
+    <MESSAGE value="michael's changes inserted&#10;--padding broken" />
+    <option name="LAST_COMMIT_MESSAGE" value="michael's changes inserted&#10;--padding broken" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Timetable.svelte" />
@@ -417,16 +388,6 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="20" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/global.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/bundle.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -466,11 +427,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/global.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="299" column="17" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
+        <state relative-caret-position="272">
+          <caret line="319" column="56" selection-start-line="319" selection-start-column="56" selection-end-line="319" selection-end-column="56" />
           <folding>
+            <element signature="e#9#34#0#HTML" expanded="true" />
             <element signature="n#style#0;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -491,13 +470,6 @@
             <element signature="n#style#0;n#ul#12;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#13;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
         </state>
       </provider>
     </entry>
