@@ -156,6 +156,10 @@ function getReason(chosen) {
     return reasons[dict[chosen]].text;
   }
 }
+
+/// make hover https://svelte.dev/examples#adding-parameters-to-actions
+
+
 </script>
 <style>
 theTable{
@@ -327,7 +331,7 @@ button {
 </ul>
 <ul class =" flex-container calendar" style="padding: 0">
 <button class="time" on:click ="{() => wholeHour(1)}">9am-10am</button>
-<button class="val" on:click ="{() => addVal(0,1)}" id ="0b"> {showVal(reasonLetter[0][1])} </button>
+<button class="val" on:click ="{() => addVal(0,1)}"  id ="0b"> {showVal(reasonLetter[0][1])} </button>
 <button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(reasonLetter[1][1])} </button>
 <button class="val" on:click ="{() => addVal(2,1)}" id ="2b"> {showVal(reasonLetter[2][1])} </button>
 <button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(reasonLetter[3][1])} </button>
