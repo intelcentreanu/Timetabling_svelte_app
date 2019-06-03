@@ -170,14 +170,14 @@ app {
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 label {
 	display: block;
 }
 
 input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
+	font-family: Ubuntu;
 	padding: 0.4em;
 	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
@@ -268,8 +268,9 @@ button {
 }
 .day {
      background-color:#eaeaea;
+     text-align: center;
      flex-grow: 1;
-     font-size: 70%;
+     font-size: 100%;
      height:100%;
 
 
@@ -277,7 +278,7 @@ button {
 .time{
    background-color:#d9d9d9;
    flex-grow: 1;
-   font-size: 70%;
+   font-size: 95%;
 
 }
 .val{
@@ -302,7 +303,7 @@ margin:0;
 <div class="app">
 <div class="list">
 <label>
-   <input class="d " type=radio bind:group={chosen} value={reasons[0].label}>
+   <input class="vertical-align-middle" type=radio bind:group={chosen} value={reasons[0].label}>
    <span class="box F "><strong class="">{reasons[0].label}</strong></span>
    <span class ="">{reasons[0].text}</span>
 </label>
@@ -325,7 +326,7 @@ margin:0;
    <input type=radio bind:group={chosen} value={reasons[4].label}>
    <span class="box O"><strong>{reasons[4].label}</strong></span>
    <span >{reasons[4].text}</span>
-   <input bind:value={otherReason} placeholder={otherReason}>
+   <input class="padding:0;" bind:value={otherReason} placeholder={otherReason}>
 </label>
 
 </div>
