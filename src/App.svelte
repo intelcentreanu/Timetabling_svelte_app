@@ -205,11 +205,14 @@ vertical-align:middle;
  text-align: center;
  display: inline-block;
  }
-box{
+span.box{
  width: 20px;
  display: inline-block;
  text-align: center;
  vertical-align: top;
+}
+.align-top{
+vertical-align: top
 }
 .F{
  background-color: #0DE3F2;
@@ -235,18 +238,48 @@ dataTable{
 
 }
 
-calendar{
-  text-align:center;
-  vertical-align:middle;
-  background-color:#ccc;
+.calendar {
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
 
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  flex:auto;
-  width:100%;
-  list-style: none;
+.calendar button {
+	flex: 1;
+	min-width: 80px;
+	min-height: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 0.4em;
+	background-color: white;
+}
 
+.calendar button:last-child  {
+	margin-right: 0em;
+}
+
+.dataTable ul.calendar:first-child button {
+	background-color: #eaeaea;
+}
+
+.dataTable ul.calendar button:first-child {
+	background-color: #eaeaea;
+}
+
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+	.dataTable ul.calendar button {
+		font-size: 100%;
+	}
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+	.dataTable ul.calendar button {
+		font-size: 70%;
+	}
 }
 
 button {
@@ -304,8 +337,8 @@ margin:0;
 <div class="list">
 <label>
    <input class="vertical-align-middle" type=radio bind:group={chosen} value={reasons[0].label}>
-   <span class="box F "><strong class="">{reasons[0].label}</strong></span>
-   <span class ="">{reasons[0].text}</span>
+   <span class="box F " style="vertical-align: top;"><strong>{reasons[0].label}</strong></span>
+   <span class ="align-top">{reasons[0].text}</span>
 </label>
 <label>
    <input type=radio bind:group={chosen} value={reasons[1].label}>
