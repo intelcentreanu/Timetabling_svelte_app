@@ -162,10 +162,29 @@ function getReason(chosen) {
 
 </script>
 <style>
-theTable{
-width:100%;
-background-color: #ccc;
+app {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	color: #333;
+	margin: 0;
+	padding: 8px;
+	box-sizing: border-box;
 }
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
 input[type=radio] {
     width: 3%;
     height: 1.5em;
@@ -186,10 +205,11 @@ vertical-align:middle;
  text-align: center;
  display: inline-block;
  }
- span{
+box{
  width: 20px;
  display: inline-block;
  text-align: center;
+ vertical-align: top;
 }
 .F{
  background-color: #0DE3F2;
@@ -214,9 +234,6 @@ dataTable{
     padding:0px;
 
 }
-fix{
- padding: 0;
-}
 
 calendar{
   text-align:center;
@@ -228,14 +245,12 @@ calendar{
   flex-direction: row;
   flex:auto;
   width:100%;
-  margin:0px;
   list-style: none;
-  padding:0%;
 
 }
 
 button {
-  width:15.6% ;
+  width:15.7% ;
   font-size: 100%;
   min-height: 40px;
   text-align:center;
@@ -244,7 +259,6 @@ button {
   border:1px solid #ccc;
   flex:auto;
   flex-shrink: 1;
-  padding:0%;
 
 }
 .nothing {
@@ -276,6 +290,10 @@ button {
     font-size: 100%;
 
 }
+ul{
+padding:0;
+margin:0;
+}
 
 
 
@@ -284,36 +302,36 @@ button {
 <div class="app">
 <div class="list">
 <label>
-   <input class="d" type=radio bind:group={chosen} value={reasons[0].label}>
-   <span class="F"><strong>{reasons[0].label}</strong></span>
-   {reasons[0].text}
+   <input class="d " type=radio bind:group={chosen} value={reasons[0].label}>
+   <span class="box F "><strong class="">{reasons[0].label}</strong></span>
+   <span class ="">{reasons[0].text}</span>
 </label>
 <label>
    <input type=radio bind:group={chosen} value={reasons[1].label}>
-   <span class="P"><strong>{reasons[1].label}</strong></span>
-   {reasons[1].text}
+   <span class="box P"><strong>{reasons[1].label}</strong></span>
+   <span >{reasons[1].text}</span>
 </label>
 <label>
    <input type=radio bind:group={chosen} value={reasons[2].label}>
-   <span class="I"><strong>{reasons[2].label}</strong></span>
-   {reasons[2].text}
+   <span class="box I"><strong>{reasons[2].label}</strong></span>
+   <span >{reasons[2].text}</span>
 </label>
 <label>
    <input type=radio bind:group={chosen} value={reasons[3].label}>
-   <span class="U"><strong>{reasons[3].label}</strong></span>
-   {reasons[3].text}
+   <span class="box U"><strong>{reasons[3].label}</strong></span>
+   <span >{reasons[3].text}</span>
 </label>
 <label>
    <input type=radio bind:group={chosen} value={reasons[4].label}>
-   <span class="O"><strong>{reasons[4].label}</strong></span>
-   {reasons[4].text}
+   <span class="box O"><strong>{reasons[4].label}</strong></span>
+   <span >{reasons[4].text}</span>
    <input bind:value={otherReason} placeholder={otherReason}>
 </label>
 
 </div>
 
 <div class =" dataTable">
-<ul class =" flex-container calendar"  style="padding: 0;">
+<ul class =" calendar" >
       <button class="nothing"></button>
       <button class="day" on:click="{() => wholeDay(0)}">Monday</button>
       <button class="day" on:click="{() => wholeDay(1)}">Tuesday</button>
@@ -321,7 +339,7 @@ button {
       <button class="day" on:click="{() => wholeDay(3)}">Thursday</button>
       <button class="day" on:click="{() => wholeDay(4)}">Friday</button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0;">
+<ul class =" calendar" >
 <button class="time" style="padding: 0; " on:click ="{() => wholeHour(0) }" >8am-9am</button>
 <button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" id ="0a"> {showVal(reasonLetter[0][0])} </button>
 <button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" id ="1a"> {showVal(reasonLetter[1][0])} </button>
@@ -329,7 +347,7 @@ button {
 <button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" id ="3a"> {showVal(reasonLetter[3][0])} </button>
 <button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" id ="4a"> {showVal(reasonLetter[4][0])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(1)}">9am-10am</button>
 <button class="val" on:click ="{() => addVal(0,1)}"  id ="0b"> {showVal(reasonLetter[0][1])} </button>
 <button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(reasonLetter[1][1])} </button>
@@ -337,7 +355,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(reasonLetter[3][1])} </button>
 <button class="val" on:click ="{() => addVal(4,1)}" id ="4b"> {showVal(reasonLetter[4][1])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0 0">
+<ul class =" calendar" style="padding: 0 0">
 <button class="time" on:click ="{() => wholeHour(2)}">10am-11am</button>
 <button class="val" on:click ="{() => addVal(0,2)}" id ="0c"> {showVal(reasonLetter[0][2])} </button>
 <button class="val" on:click ="{() => addVal(1,2)}" id ="1c"> {showVal(reasonLetter[1][2])} </button>
@@ -345,7 +363,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,2)}" id ="3c"> {showVal(reasonLetter[3][2])} </button>
 <button class="val" on:click ="{() => addVal(4,2)}" id ="4c"> {showVal(reasonLetter[4][2])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(3)}">11am-12pm</button>
 <button class="val" on:click ="{() => addVal(0,3)}" id ="0d"> {showVal(reasonLetter[0][3])} </button>
 <button class="val" on:click ="{() => addVal(1,3)}" id ="1d"> {showVal(reasonLetter[1][3])} </button>
@@ -353,7 +371,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,3)}" id ="3d"> {showVal(reasonLetter[3][3])} </button>
 <button class="val" on:click ="{() => addVal(4,3)}" id ="4d"> {showVal(reasonLetter[4][3])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(4)}">12pm-1pm</button>
 <button class="val" on:click ="{() => addVal(0,4)}" id ="0e"> {showVal(reasonLetter[0][4])} </button>
 <button class="val" on:click ="{() => addVal(1,4)}" id ="1e"> {showVal(reasonLetter[1][4])} </button>
@@ -361,7 +379,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,4)}" id ="3e"> {showVal(reasonLetter[3][4])} </button>
 <button class="val" on:click ="{() => addVal(4,4)}" id ="4e"> {showVal(reasonLetter[4][4])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(5)}">1pm-2pm</button>
 <button class="val" on:click ="{() => addVal(0,5)}" id ="0f"> {showVal(reasonLetter[0][5])} </button>
 <button class="val" on:click ="{() => addVal(1,5)}" id ="1f"> {showVal(reasonLetter[1][5])} </button>
@@ -369,7 +387,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,5)}" id ="3f"> {showVal(reasonLetter[3][5])} </button>
 <button class="val" on:click ="{() => addVal(4,5)}" id ="4f"> {showVal(reasonLetter[4][5])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(6)}">2pm-3pm</button>
 <button class="val" on:click ="{() => addVal(0,6)}" id ="0g"> {showVal(reasonLetter[0][6])} </button>
 <button class="val" on:click ="{() => addVal(1,6)}" id ="1g"> {showVal(reasonLetter[1][6])} </button>
@@ -377,7 +395,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,)}" id ="3g"> {showVal(reasonLetter[3][6])} </button>
 <button class="val" on:click ="{() => addVal(4,6)}" id ="4g"> {showVal(reasonLetter[4][6])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(7)}">3pm-4pm</button>
 <button class="val" on:click ="{() => addVal(0,7)}" id ="0h"> {showVal(reasonLetter[0][7])} </button>
 <button class="val" on:click ="{() => addVal(1,7)}" id ="1h"> {showVal(reasonLetter[1][7])} </button>
@@ -385,7 +403,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,7)}" id ="3h"> {showVal(reasonLetter[3][7])} </button>
 <button class="val" on:click ="{() => addVal(4,7)}" id ="4h"> {showVal(reasonLetter[4][7])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(8)}">4pm-5pm</button>
 <button class="val" on:click ="{() => addVal(0,8)}" id ="0i"> {showVal(reasonLetter[0][8])} </button>
 <button class="val" on:click ="{() => addVal(1,8)}" id ="1i"> {showVal(reasonLetter[1][8])} </button>
@@ -393,7 +411,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,8)}" id ="3i"> {showVal(reasonLetter[3][8])} </button>
 <button class="val" on:click ="{() => addVal(4,8)}" id ="4i"> {showVal(reasonLetter[4][8])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(9)}">5pm-6pm</button>
 <button class="val" on:click ="{() => addVal(0,9)}" id ="0j"> {showVal(reasonLetter[0][9])} </button>
 <button class="val" on:click ="{() => addVal(1,9)}" id ="1j"> {showVal(reasonLetter[1][9])} </button>
@@ -401,7 +419,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,9)}" id ="3j"> {showVal(reasonLetter[3][9])} </button>
 <button class="val" on:click ="{() => addVal(4,9)}" id ="4j"> {showVal(reasonLetter[4][9])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(10)}">6pm-7pm</button>
 <button class="val" on:click ="{() => addVal(0,10)}" id ="0k"> {showVal(reasonLetter[0][10])} </button>
 <button class="val" on:click ="{() => addVal(1,10)}" id ="1k"> {showVal(reasonLetter[1][10])} </button>
@@ -409,7 +427,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,10)}" id ="3k"> {showVal(reasonLetter[3][10])} </button>
 <button class="val" on:click ="{() => addVal(4,10)}" id ="4k"> {showVal(reasonLetter[4][10])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(11)}">7pm-8pm</button>
 <button class="val" on:click ="{() => addVal(0,11)}" id ="0l"> {showVal(reasonLetter[0][11])} </button>
 <button class="val" on:click ="{() => addVal(1,11)}" id ="1l"> {showVal(reasonLetter[1][11])} </button>
@@ -417,7 +435,7 @@ button {
 <button class="val" on:click ="{() => addVal(3,11)}" id ="3l"> {showVal(reasonLetter[3][11])} </button>
 <button class="val" on:click ="{() => addVal(4,11)}" id ="4l"> {showVal(reasonLetter[4][11])} </button>
 </ul>
-<ul class =" flex-container calendar" style="padding: 0">
+<ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(12)}">8pm-9pm</button>
 <button class="val" on:click ="{() => addVal(0,12)}" id ="0m"> {showVal(reasonLetter[0][12])} </button>
 <button class="val" on:click ="{() => addVal(1,12)}" id ="1m"> {showVal(reasonLetter[1][12])} </button>
