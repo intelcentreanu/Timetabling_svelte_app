@@ -6,7 +6,7 @@ const prod = mode === 'production';
 
 module.exports = {
 	entry: {
-		bundle: ['@babel/polyfill','./src/App.svelte']
+		timetableCustomQ: ['@babel/polyfill','./src/App.svelte']
 	},
 	resolve: {
 		extensions: ['.mjs', '.js', '.svelte']
