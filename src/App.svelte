@@ -4,7 +4,8 @@ import {onMount} from 'svelte';
 export let reasonList;
 export let reasonLetter;
 
-onMount(()=>{
+onMount(async ()=>{
+    //processData([reasonLetter,reasonList]);
     reasonLetter.forEach((day,indexX) =>{
         day.forEach((slot,indexY) =>{
             document.getElementById(getId(indexX, indexY)).style.backgroundColor = colourDict[slot];
@@ -12,14 +13,20 @@ onMount(()=>{
         })
     })
 
-})
+});
+function processData(input){
+    reasonLetter = [0];
+    reasonList = reasonList[1];
+
+}
 
 function clear() {
   clearAllColours();
   reasonLetter = [["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]];
   reasonList = [["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""]];
 }
-
+var dayList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var timeList = ["8am - 9am",  "9am - 10am", "10am - 11am", "11am - 12am", "12am - 1pm", "1pm - 2pm", "2pm - 3pm", "3pm - 4pm", "4pm - 5pm", "5pm - 6pm", "6pm - 7pm", "7pm -8pm","8pm -9pm"];
 var yDictionary = {
   0: 'a',
   1: 'b',
@@ -68,8 +75,7 @@ function getId(x, y) {
 }
 
 function addVal(x, y,colour=false) {
-    console.log("Reason List " + reasonList);
-    console.log("reasonLetter code list" + reasonLetter);
+
   if (reasonLetter[x][y] === "none") {
     document.getElementById(getId(x, y)).style.backgroundColor = colourDict[chosen];
     reasonLetter[x][y] = chosen;
@@ -84,6 +90,24 @@ function addVal(x, y,colour=false) {
 
   reasonList = reasonList;
   reasonLetter = reasonLetter;
+
+  if(!colour){
+      prettyOutput();
+  }
+}
+function prettyOutput(){
+    console.log("");
+    reasonLetter.forEach((day, y) =>{
+        day.forEach((cell,x) =>{
+            if(cell !=="none"){
+                let toReturn = "Not available at " + timeList[x] + " on " + dayList[y] + " because of " + reasonList[y][x] + "(" + cell + ")";
+                console.log(toReturn);
+
+            }
+
+        })
+    })
+
 }
 
 function wholeHour(y) {
@@ -92,6 +116,7 @@ function wholeHour(y) {
   }
   reasonList = reasonList;
   reasonLetter = reasonLetter;
+  prettyOutput();
 }
 
 function wholeDay(x) {
@@ -101,6 +126,7 @@ function wholeDay(x) {
 
   reasonList = reasonList;
   reasonLetter = reasonLetter;
+  prettyOutput();
 }
 
 function showVal(v) {
@@ -398,7 +424,7 @@ margin:0;
 <button class="val" on:click ="{() => addVal(4,2)}" id ="4c"> {showVal(reasonLetter[4][2])} </button>
 </ul>
 <ul class =" calendar" >
-<button class="time" on:click ="{() => wholeHour(3)}">11am-12pm</button>
+<button class="time" on:click ="{() => wholeHour(3)}">11am-12am</button>
 <button class="val" on:click ="{() => addVal(0,3)}" id ="0d"> {showVal(reasonLetter[0][3])} </button>
 <button class="val" on:click ="{() => addVal(1,3)}" id ="1d"> {showVal(reasonLetter[1][3])} </button>
 <button class="val" on:click ="{() => addVal(2,3)}" id ="2d"> {showVal(reasonLetter[2][3])} </button>
@@ -406,7 +432,7 @@ margin:0;
 <button class="val" on:click ="{() => addVal(4,3)}" id ="4d"> {showVal(reasonLetter[4][3])} </button>
 </ul>
 <ul class =" calendar" >
-<button class="time" on:click ="{() => wholeHour(4)}">12pm-1pm</button>
+<button class="time" on:click ="{() => wholeHour(4)}">12am-1pm</button>
 <button class="val" on:click ="{() => addVal(0,4)}" id ="0e"> {showVal(reasonLetter[0][4])} </button>
 <button class="val" on:click ="{() => addVal(1,4)}" id ="1e"> {showVal(reasonLetter[1][4])} </button>
 <button class="val" on:click ="{() => addVal(2,4)}" id ="2e"> {showVal(reasonLetter[2][4])} </button>
