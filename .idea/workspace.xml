@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5155ce8a-17c4-4923-8a6d-bab32660ffc8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/timetableCustomQ.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/timetableCustomQ.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/timetableCustomQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/timetableCustomQ.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
     </list>
@@ -116,13 +116,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="3" />
-          <entry key="svelte" value="706" />
+          <entry key="html" value="42" />
+          <entry key="svelte" value="870" />
+          <entry key="txt" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Svelte" value="709" />
+          <entry key="PLAIN_TEXT" value="75" />
+          <entry key="Svelte" value="912" />
         </counts>
       </usages-collector>
     </session>
@@ -141,8 +143,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#9#34#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,8 +160,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="374">
+              <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -244,8 +249,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="255" />
-    <option name="width" value="1646" />
+    <option name="x" value="81" />
+    <option name="width" value="1820" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -326,7 +331,7 @@
       <workItem from="1559272635245" duration="8645000" />
       <workItem from="1559281610180" duration="3857000" />
       <workItem from="1559525000656" duration="6065000" />
-      <workItem from="1559880091674" duration="2078000" />
+      <workItem from="1559880091674" duration="2904000" />
     </task>
     <task id="LOCAL-00001" summary="edited readme - removed intro lines">
       <created>1559107699674</created>
@@ -384,16 +389,23 @@
       <option name="project" value="LOCAL" />
       <updated>1559534307905</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added pretty output,&#10;&#10;handled multiple printing when entire row is clicked">
+      <created>1559882236774</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1559882236774</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32299000" />
+    <option name="totallyTimeSpent" value="33125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="255" y="0" width="1646" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.027985075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -429,7 +441,8 @@
     <MESSAGE value="padding fixed, global.css not needed" />
     <MESSAGE value="tidyied up the text" />
     <MESSAGE value="aligned stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="aligned stuff" />
+    <MESSAGE value="added pretty output,&#10;&#10;handled multiple printing when entire row is clicked" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pretty output,&#10;&#10;handled multiple printing when entire row is clicked" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Timetable.svelte" />
@@ -489,15 +502,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="374">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#9#34#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -106,7 +106,11 @@ function prettyOutput(){
             }
 
         })
-    })
+    });
+    console.log("");
+    console.log(reasonList);
+    console.log(reasonLetter);
+
 
 }
 
