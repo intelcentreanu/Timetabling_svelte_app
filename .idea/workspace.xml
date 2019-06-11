@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5155ce8a-17c4-4923-8a6d-bab32660ffc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/exampleInput.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleInput.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/exampleInput.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/timetableCustomQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/timetableCustomQ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -116,27 +119,31 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="42" />
+          <entry key="html" value="98" />
+          <entry key="js" value="41" />
           <entry key="json" value="148" />
-          <entry key="svelte" value="957" />
-          <entry key="txt" value="75" />
+          <entry key="svelte" value="1678" />
+          <entry key="txt" value="102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="148" />
-          <entry key="PLAIN_TEXT" value="75" />
-          <entry key="Svelte" value="999" />
+          <entry key="JavaScript" value="41" />
+          <entry key="PLAIN_TEXT" value="102" />
+          <entry key="Svelte" value="1776" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="js" value="1" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -152,11 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+            <state relative-caret-position="222">
+              <caret line="455" column="29" selection-start-line="455" selection-start-column="29" selection-end-line="455" selection-end-column="29" />
               <folding>
                 <element signature="e#9#34#0#HTML" expanded="true" />
               </folding>
@@ -164,11 +171,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/exampleInput.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/exampleInput.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="10" lean-forward="true" selection-end-line="272" />
+            <state relative-caret-position="255">
+              <caret line="15" column="20" lean-forward="true" selection-end-line="272" />
             </state>
           </provider>
         </entry>
@@ -181,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="491">
+              <caret line="307" lean-forward="true" selection-start-line="307" selection-end-line="307" />
             </state>
           </provider>
         </entry>
@@ -230,6 +237,7 @@
       <find>style=&quot;padding: 0&quot;</find>
       <find>fix</find>
       <find>theTa</find>
+      <find>getId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -248,9 +256,10 @@
         <option value="$PROJECT_DIR$/src/changeTable.html" />
         <option value="$PROJECT_DIR$/public/global.css" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/exampleInput.json" />
+        <option value="$PROJECT_DIR$/jsonString.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App.svelte" />
-        <option value="$PROJECT_DIR$/exampleInput.json" />
       </list>
     </option>
   </component>
@@ -271,8 +280,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="81" />
-    <option name="width" value="1820" />
+    <option name="x" value="14" />
+    <option name="y" value="11" />
+    <option name="width" value="1658" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -314,6 +324,9 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\u6061838\WebstormProjects\Timetabling_svelte_app_intelCentre\public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\u6061838\WebstormProjects\template-webpack\src" />
     </key>
@@ -330,12 +343,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.jsonString.js">
+    <configuration name="jsonString.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="jsonString.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="main.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Node.js.main.js" />
+      <item itemvalue="Node.js.jsonString.js" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.jsonString.js" />
         <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
@@ -355,7 +376,7 @@
       <workItem from="1559281610180" duration="3857000" />
       <workItem from="1559525000656" duration="6065000" />
       <workItem from="1559880091674" duration="3218000" />
-      <workItem from="1560229747824" duration="317000" />
+      <workItem from="1560229747824" duration="3220000" />
     </task>
     <task id="LOCAL-00001" summary="edited readme - removed intro lines">
       <created>1559107699674</created>
@@ -427,31 +448,37 @@
       <option name="project" value="LOCAL" />
       <updated>1559883239745</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="about to change data type">
+      <created>1560230155596</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560230155596</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33756000" />
+    <option name="totallyTimeSpent" value="36659000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="0" width="1820" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="14" y="11" width="1658" height="1047" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15824915" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17407407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49943882" weight="0.32932165" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5016835" side_tool="true" visible="true" weight="0.27680525" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4983165" visible="true" weight="0.27680525" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.27160493" side_tool="true" visible="true" weight="0.2822757" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.72839504" visible="true" weight="0.2822757" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -475,7 +502,8 @@
     <MESSAGE value="tidyied up the text" />
     <MESSAGE value="aligned stuff" />
     <MESSAGE value="added pretty output,&#10;&#10;handled multiple printing when entire row is clicked" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pretty output,&#10;&#10;handled multiple printing when entire row is clicked" />
+    <MESSAGE value="about to change data type" />
+    <option name="LAST_COMMIT_MESSAGE" value="about to change data type" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Timetable.svelte" />
@@ -519,20 +547,6 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="20" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -540,20 +554,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.svelte">
+    <entry file="file://$PROJECT_DIR$/jsonString.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          <folding>
-            <element signature="e#9#34#0#HTML" expanded="true" />
-          </folding>
+        <state>
+          <caret selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exampleInput.json">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="10" lean-forward="true" selection-end-line="272" />
+        <state relative-caret-position="491">
+          <caret line="307" lean-forward="true" selection-start-line="307" selection-end-line="307" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/exampleInput.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" lean-forward="true" selection-end-line="272" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="455" column="29" selection-start-line="455" selection-start-column="29" selection-end-line="455" selection-end-column="29" />
+          <folding>
+            <element signature="e#9#34#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

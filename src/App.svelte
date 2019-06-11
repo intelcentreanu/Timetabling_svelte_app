@@ -1,31 +1,297 @@
 <script>
 import "@babel/polyfill";
 import {onMount} from 'svelte';
-export let reasonList;
-export let reasonLetter;
-
-onMount(async ()=>{
-    //processData([reasonLetter,reasonList]);
-    reasonLetter.forEach((day,indexX) =>{
-        day.forEach((slot,indexY) =>{
-            document.getElementById(getId(indexX, indexY)).style.backgroundColor = colourDict[slot];
+export let reasonsInput;
+console.log(reasonsInput);
+let r = JSON.parse(reasonsInput);
+onMount( ()=>{
+     dayList.forEach((day,indexX) =>{
+        timeList2.forEach((slot,indexY) =>{
+            document.getElementById(getId(indexX, indexY)).style.backgroundColor = colourDict[slot["code"]];
 
         })
     })
 
 });
-function processData(input){
-    reasonLetter = [0];
-    reasonList = reasonList[1];
-
-}
 
 function clear() {
   clearAllColours();
-  reasonLetter = [["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]];
-  reasonList = [["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", ""]];
+  r = {
+        "Monday":{
+          "8":{
+            "code":"none",
+            "reason":""
+          },
+          "9":{
+            "code":"none",
+            "reason":""
+          },
+          "10":{
+            "code":"none",
+            "reason":""
+          },
+          "11":{
+            "code":"none",
+            "reason":""
+          },
+          "12":{
+            "code":"none",
+            "reason":""
+          },
+          "13":{
+            "code":"none",
+            "reason":""
+          },
+          "14":{
+            "code":"none",
+            "reason":""
+          },
+          "15":{
+            "code":"none",
+            "reason":""
+          },
+          "16":{
+            "code":"none",
+            "reason":""
+          },
+          "17":{
+            "code":"none",
+            "reason":""
+          },
+          "18":{
+            "code":"none",
+            "reason":""
+          },
+          "19":{
+            "code":"none",
+            "reason":""
+          },
+          "20":{
+            "code":"none",
+            "reason":""
+          }
+        },
+        "Tuesday":{
+          "8":{
+            "code":"none",
+            "reason":""
+          },
+          "9":{
+            "code":"none",
+            "reason":""
+          },
+          "10":{
+            "code":"none",
+            "reason":""
+          },
+          "11":{
+            "code":"none",
+            "reason":""
+          },
+          "12":{
+            "code":"none",
+            "reason":""
+          },
+          "13":{
+            "code":"none",
+            "reason":""
+          },
+          "14":{
+            "code":"none",
+            "reason":""
+          },
+          "15":{
+            "code":"none",
+            "reason":""
+          },
+          "16":{
+            "code":"none",
+            "reason":""
+          },
+          "17":{
+            "code":"none",
+            "reason":""
+          },
+          "18":{
+            "code":"none",
+            "reason":""
+          },
+          "19":{
+            "code":"none",
+            "reason":""
+          },
+          "20":{
+            "code":"none",
+            "reason":""
+          }
+        },
+        "Wednesday":{
+          "8":{
+            "code":"none",
+            "reason":""
+          },
+          "9":{
+            "code":"none",
+            "reason":""
+          },
+          "10":{
+            "code":"none",
+            "reason":""
+          },
+          "11":{
+            "code":"none",
+            "reason":""
+          },
+          "12":{
+            "code":"none",
+            "reason":""
+          },
+          "13":{
+            "code":"none",
+            "reason":""
+          },
+          "14":{
+            "code":"none",
+            "reason":""
+          },
+          "15":{
+            "code":"none",
+            "reason":""
+          },
+          "16":{
+            "code":"none",
+            "reason":""
+          },
+          "17":{
+            "code":"none",
+            "reason":""
+          },
+          "18":{
+            "code":"none",
+            "reason":""
+          },
+          "19":{
+            "code":"none",
+            "reason":""
+          },
+          "20":{
+            "code":"none",
+            "reason":""
+          }
+        },
+        "Thursday":{
+          "8":{
+            "code":"none",
+            "reason":""
+          },
+          "9":{
+            "code":"none",
+            "reason":""
+          },
+          "10":{
+            "code":"none",
+            "reason":""
+          },
+          "11":{
+            "code":"none",
+            "reason":""
+          },
+          "12":{
+            "code":"none",
+            "reason":""
+          },
+          "13":{
+            "code":"none",
+            "reason":""
+          },
+          "14":{
+            "code":"none",
+            "reason":""
+          },
+          "15":{
+            "code":"none",
+            "reason":""
+          },
+          "16":{
+            "code":"none",
+            "reason":""
+          },
+          "17":{
+            "code":"none",
+            "reason":""
+          },
+          "18":{
+            "code":"none",
+            "reason":""
+          },
+          "19":{
+            "code":"none",
+            "reason":""
+          },
+          "20":{
+            "code":"none",
+            "reason":""
+          }
+        },
+        "Friday":{
+          "8":{
+            "code":"none",
+            "reason":""
+          },
+          "9":{
+            "code":"none",
+            "reason":""
+          },
+          "10":{
+            "code":"none",
+            "reason":""
+          },
+          "11":{
+            "code":"none",
+            "reason":""
+          },
+          "12":{
+            "code":"none",
+            "reason":""
+          },
+          "13":{
+            "code":"none",
+            "reason":""
+          },
+          "14":{
+            "code":"none",
+            "reason":""
+          },
+          "15":{
+            "code":"none",
+            "reason":""
+          },
+          "16":{
+            "code":"none",
+            "reason":""
+          },
+          "17":{
+            "code":"none",
+            "reason":""
+          },
+          "18":{
+            "code":"none",
+            "reason":""
+          },
+          "19":{
+            "code":"none",
+            "reason":""
+          },
+          "20":{
+            "code":"none",
+            "reason":""
+          }
+        }
+      };
 }
 var dayList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var timeList2 = ["8",  "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19","20"];
+
 var timeList = ["8am - 9am",  "9am - 10am", "10am - 11am", "11am - 12am", "12am - 1pm", "1pm - 2pm", "2pm - 3pm", "3pm - 4pm", "4pm - 5pm", "5pm - 6pm", "6pm - 7pm", "7pm -8pm","8pm -9pm"];
 var yDictionary = {
   0: 'a',
@@ -76,20 +342,22 @@ function getId(x, y) {
 
 function addVal(x, y,colour=false) {
 
-  if (reasonLetter[x][y] === "none") {
+  if (getLetter(x,y) === "none") {
     document.getElementById(getId(x, y)).style.backgroundColor = colourDict[chosen];
-    reasonLetter[x][y] = chosen;
-    reasonList[x][y] = getReason(chosen);
+    console.log(r[dayList[x]][timeList2[y]]["code"]);
+    r[dayList[x]][timeList2[y]]["code"] = chosen;
+    console.log(chosen);
+    console.log(r[dayList[x]][timeList2[y]]["code"]);
+    r[dayList[x]][timeList2[y]]["reason"] = getReason(chosen);
   } else {
       if(!colour){
           document.getElementById(getId(x, y)).style.backgroundColor = "#fff";
-          reasonLetter[x][y] = "none";
-          reasonList[x][y] = "";}
+          r[dayList[x]][timeList2[y]]["code"] = "none";
+          r[dayList[x]][timeList2[y]]["reason"] = "";}
 
   }
 
-  reasonList = reasonList;
-  reasonLetter = reasonLetter;
+  r=r;
 
   if(!colour){
       prettyOutput();
@@ -97,10 +365,11 @@ function addVal(x, y,colour=false) {
 }
 function prettyOutput(){
     console.log("");
+    //Fixme
     reasonLetter.forEach((day, y) =>{
         day.forEach((cell,x) =>{
             if(cell !=="none"){
-                let toReturn = "Not available at " + timeList[x] + " on " + dayList[y] + " because of " + reasonList[y][x] + "(" + cell + ")";
+                let toReturn = "Not available at " + timeList[x] + " on " + dayList[y] + " because of " + r[dayList[x]][timeList2[y]]["reason"] + "(" + cell + ")";
                 console.log(toReturn);
 
             }
@@ -108,8 +377,6 @@ function prettyOutput(){
         })
     });
     console.log("");
-    console.log(reasonList);
-    console.log(reasonLetter);
 
 
 }
@@ -118,18 +385,16 @@ function wholeHour(y) {
   for (var i = 0; i < 5; i++) {
     addVal(i, y,true);
   }
-  reasonList = reasonList;
-  reasonLetter = reasonLetter;
+  r=r;
   prettyOutput();
 }
 
 function wholeDay(x) {
-  for (var i = 0; i < reasonLetter[x].length; i++) {
+  for (var i = 0; i < 13; i++) {
     addVal(x, i,true);
   }
 
-  reasonList = reasonList;
-  reasonLetter = reasonLetter;
+  r=r;
   prettyOutput();
 }
 
@@ -188,7 +453,11 @@ function getReason(chosen) {
 }
 
 /// make hover https://svelte.dev/examples#adding-parameters-to-actions
-
+function getLetter(i,j){
+    let day = dayList[i];
+    let time = timeList2[j];
+    return r[day][time]["code"]
+}
 
 </script>
 <style>
@@ -405,107 +674,107 @@ margin:0;
 </ul>
 <ul class =" calendar" >
 <button class="time" style="padding: 0; " on:click ="{() => wholeHour(0) }" >8am-9am</button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" id ="0a"> {showVal(reasonLetter[0][0])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" id ="1a"> {showVal(reasonLetter[1][0])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(2,0)}" id ="2a"> {showVal(reasonLetter[2][0])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" id ="3a"> {showVal(reasonLetter[3][0])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" id ="4a"> {showVal(reasonLetter[4][0])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" id ="0a"> {showVal(getLetter(0,0))} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" id ="1a"> {showVal(getLetter(1,0))} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(2,0)}" id ="2a"> {showVal(getLetter(2,0))} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" id ="3a"> {showVal(getLetter(3,0))} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" id ="4a"> {showVal(getLetter(4,0))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(1)}">9am-10am</button>
-<button class="val" on:click ="{() => addVal(0,1)}"  id ="0b"> {showVal(reasonLetter[0][1])} </button>
-<button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(reasonLetter[1][1])} </button>
-<button class="val" on:click ="{() => addVal(2,1)}" id ="2b"> {showVal(reasonLetter[2][1])} </button>
-<button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(reasonLetter[3][1])} </button>
-<button class="val" on:click ="{() => addVal(4,1)}" id ="4b"> {showVal(reasonLetter[4][1])} </button>
+<button class="val" on:click ="{() => addVal(0,1)}"  id ="0b"> {showVal(getLetter(0,1))} </button>
+<button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(getLetter(1,1))} </button>
+<button class="val" on:click ="{() => addVal(2,1)}" id ="2b"> {showVal(getLetter(2,1))} </button>
+<button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(getLetter(3,1))} </button>
+<button class="val" on:click ="{() => addVal(4,1)}" id ="4b"> {showVal(getLetter(4,1))} </button>
 </ul>
 <ul class =" calendar" style="padding: 0 0">
 <button class="time" on:click ="{() => wholeHour(2)}">10am-11am</button>
-<button class="val" on:click ="{() => addVal(0,2)}" id ="0c"> {showVal(reasonLetter[0][2])} </button>
-<button class="val" on:click ="{() => addVal(1,2)}" id ="1c"> {showVal(reasonLetter[1][2])} </button>
-<button class="val" on:click ="{() => addVal(2,2)}" id ="2c"> {showVal(reasonLetter[2][2])} </button>
-<button class="val" on:click ="{() => addVal(3,2)}" id ="3c"> {showVal(reasonLetter[3][2])} </button>
-<button class="val" on:click ="{() => addVal(4,2)}" id ="4c"> {showVal(reasonLetter[4][2])} </button>
+<button class="val" on:click ="{() => addVal(0,2)}" id ="0c"> {showVal(getLetter(0,2))} </button>
+<button class="val" on:click ="{() => addVal(1,2)}" id ="1c"> {showVal(getLetter(1,2))} </button>
+<button class="val" on:click ="{() => addVal(2,2)}" id ="2c"> {showVal(getLetter(2,2))} </button>
+<button class="val" on:click ="{() => addVal(3,2)}" id ="3c"> {showVal(getLetter(3,2))} </button>
+<button class="val" on:click ="{() => addVal(4,2)}" id ="4c"> {showVal(getLetter(4,2))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(3)}">11am-12am</button>
-<button class="val" on:click ="{() => addVal(0,3)}" id ="0d"> {showVal(reasonLetter[0][3])} </button>
-<button class="val" on:click ="{() => addVal(1,3)}" id ="1d"> {showVal(reasonLetter[1][3])} </button>
-<button class="val" on:click ="{() => addVal(2,3)}" id ="2d"> {showVal(reasonLetter[2][3])} </button>
-<button class="val" on:click ="{() => addVal(3,3)}" id ="3d"> {showVal(reasonLetter[3][3])} </button>
-<button class="val" on:click ="{() => addVal(4,3)}" id ="4d"> {showVal(reasonLetter[4][3])} </button>
+<button class="val" on:click ="{() => addVal(0,3)}" id ="0d"> {showVal(getLetter(0,3))} </button>
+<button class="val" on:click ="{() => addVal(1,3)}" id ="1d"> {showVal(getLetter(1,3))} </button>
+<button class="val" on:click ="{() => addVal(2,3)}" id ="2d"> {showVal(getLetter(2,3))} </button>
+<button class="val" on:click ="{() => addVal(3,3)}" id ="3d"> {showVal(getLetter(3,3))} </button>
+<button class="val" on:click ="{() => addVal(4,3)}" id ="4d"> {showVal(getLetter(4,3))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(4)}">12am-1pm</button>
-<button class="val" on:click ="{() => addVal(0,4)}" id ="0e"> {showVal(reasonLetter[0][4])} </button>
-<button class="val" on:click ="{() => addVal(1,4)}" id ="1e"> {showVal(reasonLetter[1][4])} </button>
-<button class="val" on:click ="{() => addVal(2,4)}" id ="2e"> {showVal(reasonLetter[2][4])} </button>
-<button class="val" on:click ="{() => addVal(3,4)}" id ="3e"> {showVal(reasonLetter[3][4])} </button>
-<button class="val" on:click ="{() => addVal(4,4)}" id ="4e"> {showVal(reasonLetter[4][4])} </button>
+<button class="val" on:click ="{() => addVal(0,4)}" id ="0e"> {showVal(getLetter(0,4))} </button>
+<button class="val" on:click ="{() => addVal(1,4)}" id ="1e"> {showVal(getLetter(1,4))} </button>
+<button class="val" on:click ="{() => addVal(2,4)}" id ="2e"> {showVal(getLetter(2,4))} </button>
+<button class="val" on:click ="{() => addVal(3,4)}" id ="3e"> {showVal(getLetter(3,4))} </button>
+<button class="val" on:click ="{() => addVal(4,4)}" id ="4e"> {showVal(getLetter(4,4))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(5)}">1pm-2pm</button>
-<button class="val" on:click ="{() => addVal(0,5)}" id ="0f"> {showVal(reasonLetter[0][5])} </button>
-<button class="val" on:click ="{() => addVal(1,5)}" id ="1f"> {showVal(reasonLetter[1][5])} </button>
-<button class="val" on:click ="{() => addVal(2,5)}" id ="2f"> {showVal(reasonLetter[2][5])} </button>
-<button class="val" on:click ="{() => addVal(3,5)}" id ="3f"> {showVal(reasonLetter[3][5])} </button>
-<button class="val" on:click ="{() => addVal(4,5)}" id ="4f"> {showVal(reasonLetter[4][5])} </button>
+<button class="val" on:click ="{() => addVal(0,5)}" id ="0f"> {showVal(getLetter(0,5))} </button>
+<button class="val" on:click ="{() => addVal(1,5)}" id ="1f"> {showVal(getLetter(1,5))} </button>
+<button class="val" on:click ="{() => addVal(2,5)}" id ="2f"> {showVal(getLetter(2,5))} </button>
+<button class="val" on:click ="{() => addVal(3,5)}" id ="3f"> {showVal(getLetter(3,5))} </button>
+<button class="val" on:click ="{() => addVal(4,5)}" id ="4f"> {showVal(getLetter(4,5))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(6)}">2pm-3pm</button>
-<button class="val" on:click ="{() => addVal(0,6)}" id ="0g"> {showVal(reasonLetter[0][6])} </button>
-<button class="val" on:click ="{() => addVal(1,6)}" id ="1g"> {showVal(reasonLetter[1][6])} </button>
-<button class="val" on:click ="{() => addVal(2,6)}" id ="2g"> {showVal(reasonLetter[2][6])} </button>
-<button class="val" on:click ="{() => addVal(3,)}" id ="3g"> {showVal(reasonLetter[3][6])} </button>
-<button class="val" on:click ="{() => addVal(4,6)}" id ="4g"> {showVal(reasonLetter[4][6])} </button>
+<button class="val" on:click ="{() => addVal(0,6)}" id ="0g"> {showVal(getLetter(0,6))} </button>
+<button class="val" on:click ="{() => addVal(1,6)}" id ="1g"> {showVal(getLetter(1,6))} </button>
+<button class="val" on:click ="{() => addVal(2,6)}" id ="2g"> {showVal(getLetter(2,6))} </button>
+<button class="val" on:click ="{() => addVal(3,)}" id ="3g"> {showVal(getLetter(3,6))} </button>
+<button class="val" on:click ="{() => addVal(4,6)}" id ="4g"> {showVal(getLetter(4,6))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(7)}">3pm-4pm</button>
-<button class="val" on:click ="{() => addVal(0,7)}" id ="0h"> {showVal(reasonLetter[0][7])} </button>
-<button class="val" on:click ="{() => addVal(1,7)}" id ="1h"> {showVal(reasonLetter[1][7])} </button>
-<button class="val" on:click ="{() => addVal(2,7)}" id ="2h"> {showVal(reasonLetter[2][7])} </button>
-<button class="val" on:click ="{() => addVal(3,7)}" id ="3h"> {showVal(reasonLetter[3][7])} </button>
-<button class="val" on:click ="{() => addVal(4,7)}" id ="4h"> {showVal(reasonLetter[4][7])} </button>
+<button class="val" on:click ="{() => addVal(0,7)}" id ="0h"> {showVal(getLetter(0,7))} </button>
+<button class="val" on:click ="{() => addVal(1,7)}" id ="1h"> {showVal(getLetter(1,7))} </button>
+<button class="val" on:click ="{() => addVal(2,7)}" id ="2h"> {showVal(getLetter(2,7))} </button>
+<button class="val" on:click ="{() => addVal(3,7)}" id ="3h"> {showVal(getLetter(3,7))} </button>
+<button class="val" on:click ="{() => addVal(4,7)}" id ="4h"> {showVal(getLetter(4,7))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(8)}">4pm-5pm</button>
-<button class="val" on:click ="{() => addVal(0,8)}" id ="0i"> {showVal(reasonLetter[0][8])} </button>
-<button class="val" on:click ="{() => addVal(1,8)}" id ="1i"> {showVal(reasonLetter[1][8])} </button>
-<button class="val" on:click ="{() => addVal(2,8)}" id ="2i"> {showVal(reasonLetter[2][8])} </button>
-<button class="val" on:click ="{() => addVal(3,8)}" id ="3i"> {showVal(reasonLetter[3][8])} </button>
-<button class="val" on:click ="{() => addVal(4,8)}" id ="4i"> {showVal(reasonLetter[4][8])} </button>
+<button class="val" on:click ="{() => addVal(0,8)}" id ="0i"> {showVal(getLetter(0,8))} </button>
+<button class="val" on:click ="{() => addVal(1,8)}" id ="1i"> {showVal(getLetter(1,8))} </button>
+<button class="val" on:click ="{() => addVal(2,8)}" id ="2i"> {showVal(getLetter(2,8))} </button>
+<button class="val" on:click ="{() => addVal(3,8)}" id ="3i"> {showVal(getLetter(3,8))} </button>
+<button class="val" on:click ="{() => addVal(4,8)}" id ="4i"> {showVal(getLetter(4,8))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(9)}">5pm-6pm</button>
-<button class="val" on:click ="{() => addVal(0,9)}" id ="0j"> {showVal(reasonLetter[0][9])} </button>
-<button class="val" on:click ="{() => addVal(1,9)}" id ="1j"> {showVal(reasonLetter[1][9])} </button>
-<button class="val" on:click ="{() => addVal(2,9)}" id ="2j"> {showVal(reasonLetter[2][9])} </button>
-<button class="val" on:click ="{() => addVal(3,9)}" id ="3j"> {showVal(reasonLetter[3][9])} </button>
-<button class="val" on:click ="{() => addVal(4,9)}" id ="4j"> {showVal(reasonLetter[4][9])} </button>
+<button class="val" on:click ="{() => addVal(0,9)}" id ="0j"> {showVal(getLetter(0,9))} </button>
+<button class="val" on:click ="{() => addVal(1,9)}" id ="1j"> {showVal(getLetter(1,9))} </button>
+<button class="val" on:click ="{() => addVal(2,9)}" id ="2j"> {showVal(getLetter(2,9))} </button>
+<button class="val" on:click ="{() => addVal(3,9)}" id ="3j"> {showVal(getLetter(3,9))} </button>
+<button class="val" on:click ="{() => addVal(4,9)}" id ="4j"> {showVal(getLetter(4,9))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(10)}">6pm-7pm</button>
-<button class="val" on:click ="{() => addVal(0,10)}" id ="0k"> {showVal(reasonLetter[0][10])} </button>
-<button class="val" on:click ="{() => addVal(1,10)}" id ="1k"> {showVal(reasonLetter[1][10])} </button>
-<button class="val" on:click ="{() => addVal(2,10)}" id ="2k"> {showVal(reasonLetter[2][10])} </button>
-<button class="val" on:click ="{() => addVal(3,10)}" id ="3k"> {showVal(reasonLetter[3][10])} </button>
-<button class="val" on:click ="{() => addVal(4,10)}" id ="4k"> {showVal(reasonLetter[4][10])} </button>
+<button class="val" on:click ="{() => addVal(0,10)}" id ="0k"> {showVal(getLetter(0,10))} </button>
+<button class="val" on:click ="{() => addVal(1,10)}" id ="1k"> {showVal(getLetter(1,10))} </button>
+<button class="val" on:click ="{() => addVal(2,10)}" id ="2k"> {showVal(getLetter(2,10))} </button>
+<button class="val" on:click ="{() => addVal(3,10)}" id ="3k"> {showVal(getLetter(3,10))} </button>
+<button class="val" on:click ="{() => addVal(4,10)}" id ="4k"> {showVal(getLetter(4,10))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(11)}">7pm-8pm</button>
-<button class="val" on:click ="{() => addVal(0,11)}" id ="0l"> {showVal(reasonLetter[0][11])} </button>
-<button class="val" on:click ="{() => addVal(1,11)}" id ="1l"> {showVal(reasonLetter[1][11])} </button>
-<button class="val" on:click ="{() => addVal(2,11)}" id ="2l"> {showVal(reasonLetter[2][11])} </button>
-<button class="val" on:click ="{() => addVal(3,11)}" id ="3l"> {showVal(reasonLetter[3][11])} </button>
-<button class="val" on:click ="{() => addVal(4,11)}" id ="4l"> {showVal(reasonLetter[4][11])} </button>
+<button class="val" on:click ="{() => addVal(0,11)}" id ="0l"> {showVal(getLetter(0,11))} </button>
+<button class="val" on:click ="{() => addVal(1,11)}" id ="1l"> {showVal(getLetter(1,11))} </button>
+<button class="val" on:click ="{() => addVal(2,11)}" id ="2l"> {showVal(getLetter(2,11))} </button>
+<button class="val" on:click ="{() => addVal(3,11)}" id ="3l"> {showVal(getLetter(3,11))} </button>
+<button class="val" on:click ="{() => addVal(4,11)}" id ="4l"> {showVal(getLetter(4,11))} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(12)}">8pm-9pm</button>
-<button class="val" on:click ="{() => addVal(0,12)}" id ="0m"> {showVal(reasonLetter[0][12])} </button>
-<button class="val" on:click ="{() => addVal(1,12)}" id ="1m"> {showVal(reasonLetter[1][12])} </button>
-<button class="val" on:click ="{() => addVal(2,12)}" id ="2m"> {showVal(reasonLetter[2][12])} </button>
-<button class="val" on:click ="{() => addVal(3,12)}" id ="3m"> {showVal(reasonLetter[3][12])} </button>
-<button class="val" on:click ="{() => addVal(4,12)}" id ="4m"> {showVal(reasonLetter[4][12])} </button>
+<button class="val" on:click ="{() => addVal(0,12)}" id ="0m"> {showVal(getLetter(0,12))} </button>
+<button class="val" on:click ="{() => addVal(1,12)}" id ="1m"> {showVal(getLetter(1,12))} </button>
+<button class="val" on:click ="{() => addVal(2,12)}" id ="2m"> {showVal(getLetter(2,12))} </button>
+<button class="val" on:click ="{() => addVal(3,12)}" id ="3m"> {showVal(getLetter(3,12))} </button>
+<button class="val" on:click ="{() => addVal(4,12)}" id ="4m"> {showVal(getLetter(4,12))} </button>
 </ul>
 
 </div>
