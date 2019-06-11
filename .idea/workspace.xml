@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5155ce8a-17c4-4923-8a6d-bab32660ffc8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleInput.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/exampleInput.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/timetableCustomQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/timetableCustomQ.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
     </list>
@@ -122,16 +120,16 @@
           <entry key="html" value="98" />
           <entry key="js" value="41" />
           <entry key="json" value="148" />
-          <entry key="svelte" value="1678" />
-          <entry key="txt" value="102" />
+          <entry key="svelte" value="1978" />
+          <entry key="txt" value="126" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="148" />
           <entry key="JavaScript" value="41" />
-          <entry key="PLAIN_TEXT" value="102" />
-          <entry key="Svelte" value="1776" />
+          <entry key="PLAIN_TEXT" value="126" />
+          <entry key="Svelte" value="2076" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -162,10 +160,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="455" column="29" selection-start-line="455" selection-start-column="29" selection-end-line="455" selection-end-column="29" />
+            <state relative-caret-position="53">
+              <caret line="711" column="83" selection-start-line="711" selection-start-column="83" selection-end-line="711" selection-end-column="83" />
               <folding>
                 <element signature="e#9#34#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#button#2;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#3;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#4;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#5;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#3;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -238,6 +241,7 @@
       <find>fix</find>
       <find>theTa</find>
       <find>getId</find>
+      <find>forEach</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -376,7 +380,7 @@
       <workItem from="1559281610180" duration="3857000" />
       <workItem from="1559525000656" duration="6065000" />
       <workItem from="1559880091674" duration="3218000" />
-      <workItem from="1560229747824" duration="3220000" />
+      <workItem from="1560229747824" duration="5212000" />
     </task>
     <task id="LOCAL-00001" summary="edited readme - removed intro lines">
       <created>1559107699674</created>
@@ -455,14 +459,22 @@
       <option name="project" value="LOCAL" />
       <updated>1560230155596</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="button vals not updating">
+      <created>1560233188633</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560233188633</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36659000" />
+    <option name="totallyTimeSpent" value="38651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="11" width="1658" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17407407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -503,7 +515,8 @@
     <MESSAGE value="aligned stuff" />
     <MESSAGE value="added pretty output,&#10;&#10;handled multiple printing when entire row is clicked" />
     <MESSAGE value="about to change data type" />
-    <option name="LAST_COMMIT_MESSAGE" value="about to change data type" />
+    <MESSAGE value="button vals not updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="button vals not updating" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Timetable.svelte" />
@@ -584,10 +597,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="455" column="29" selection-start-line="455" selection-start-column="29" selection-end-line="455" selection-end-column="29" />
+        <state relative-caret-position="53">
+          <caret line="711" column="83" selection-start-line="711" selection-start-column="83" selection-end-line="711" selection-end-column="83" />
           <folding>
             <element signature="e#9#34#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#button#2;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#3;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#4;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#5;n#ul#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#3;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

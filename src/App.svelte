@@ -345,6 +345,7 @@ function addVal(x, y,colour=false) {
   if (getLetter(x,y) === "none") {
     document.getElementById(getId(x, y)).style.backgroundColor = colourDict[chosen];
     console.log(r[dayList[x]][timeList2[y]]["code"]);
+
     r[dayList[x]][timeList2[y]]["code"] = chosen;
     console.log(chosen);
     console.log(r[dayList[x]][timeList2[y]]["code"]);
@@ -674,107 +675,107 @@ margin:0;
 </ul>
 <ul class =" calendar" >
 <button class="time" style="padding: 0; " on:click ="{() => wholeHour(0) }" >8am-9am</button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" id ="0a"> {showVal(getLetter(0,0))} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" id ="1a"> {showVal(getLetter(1,0))} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(2,0)}" id ="2a"> {showVal(getLetter(2,0))} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" id ="3a"> {showVal(getLetter(3,0))} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" id ="4a"> {showVal(getLetter(4,0))} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" id ="0a"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" id ="1a"> {showVal(r["Tuesday"]["8"]["code"]))} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(2,0)}" id ="2a"> {showVal(r["Wednesday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" id ="3a"> {showVal(r["Thursday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" id ="4a"> {showVal(r["Friday"]["8"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(1)}">9am-10am</button>
-<button class="val" on:click ="{() => addVal(0,1)}"  id ="0b"> {showVal(getLetter(0,1))} </button>
-<button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(getLetter(1,1))} </button>
-<button class="val" on:click ="{() => addVal(2,1)}" id ="2b"> {showVal(getLetter(2,1))} </button>
-<button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(getLetter(3,1))} </button>
-<button class="val" on:click ="{() => addVal(4,1)}" id ="4b"> {showVal(getLetter(4,1))} </button>
+<button class="val" on:click ="{() => addVal(0,1)}"  id ="0b"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,1)}" id ="2b"> {showVal(r["Wednesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,1)}" id ="4b"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" style="padding: 0 0">
 <button class="time" on:click ="{() => wholeHour(2)}">10am-11am</button>
-<button class="val" on:click ="{() => addVal(0,2)}" id ="0c"> {showVal(getLetter(0,2))} </button>
-<button class="val" on:click ="{() => addVal(1,2)}" id ="1c"> {showVal(getLetter(1,2))} </button>
-<button class="val" on:click ="{() => addVal(2,2)}" id ="2c"> {showVal(getLetter(2,2))} </button>
-<button class="val" on:click ="{() => addVal(3,2)}" id ="3c"> {showVal(getLetter(3,2))} </button>
-<button class="val" on:click ="{() => addVal(4,2)}" id ="4c"> {showVal(getLetter(4,2))} </button>
+<button class="val" on:click ="{() => addVal(0,2)}" id ="0c"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,2)}" id ="1c"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,2)}" id ="2c"> {showVal(r["Wednesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,2)}" id ="3c"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,2)}" id ="4c"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(3)}">11am-12am</button>
-<button class="val" on:click ="{() => addVal(0,3)}" id ="0d"> {showVal(getLetter(0,3))} </button>
-<button class="val" on:click ="{() => addVal(1,3)}" id ="1d"> {showVal(getLetter(1,3))} </button>
-<button class="val" on:click ="{() => addVal(2,3)}" id ="2d"> {showVal(getLetter(2,3))} </button>
-<button class="val" on:click ="{() => addVal(3,3)}" id ="3d"> {showVal(getLetter(3,3))} </button>
-<button class="val" on:click ="{() => addVal(4,3)}" id ="4d"> {showVal(getLetter(4,3))} </button>
+<button class="val" on:click ="{() => addVal(0,3)}" id ="0d"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,3)}" id ="1d"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,3)}" id ="2d"> {showVal(r["Wednesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,3)}" id ="3d"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,3)}" id ="4d"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(4)}">12am-1pm</button>
-<button class="val" on:click ="{() => addVal(0,4)}" id ="0e"> {showVal(getLetter(0,4))} </button>
-<button class="val" on:click ="{() => addVal(1,4)}" id ="1e"> {showVal(getLetter(1,4))} </button>
-<button class="val" on:click ="{() => addVal(2,4)}" id ="2e"> {showVal(getLetter(2,4))} </button>
-<button class="val" on:click ="{() => addVal(3,4)}" id ="3e"> {showVal(getLetter(3,4))} </button>
-<button class="val" on:click ="{() => addVal(4,4)}" id ="4e"> {showVal(getLetter(4,4))} </button>
+<button class="val" on:click ="{() => addVal(0,4)}" id ="0e"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,4)}" id ="1e"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,4)}" id ="2e"> {showVal(r["Wednesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,4)}" id ="3e"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,4)}" id ="4e"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(5)}">1pm-2pm</button>
-<button class="val" on:click ="{() => addVal(0,5)}" id ="0f"> {showVal(getLetter(0,5))} </button>
-<button class="val" on:click ="{() => addVal(1,5)}" id ="1f"> {showVal(getLetter(1,5))} </button>
-<button class="val" on:click ="{() => addVal(2,5)}" id ="2f"> {showVal(getLetter(2,5))} </button>
-<button class="val" on:click ="{() => addVal(3,5)}" id ="3f"> {showVal(getLetter(3,5))} </button>
-<button class="val" on:click ="{() => addVal(4,5)}" id ="4f"> {showVal(getLetter(4,5))} </button>
+<button class="val" on:click ="{() => addVal(0,5)}" id ="0f"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,5)}" id ="1f"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,5)}" id ="2f"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,5)}" id ="3f"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,5)}" id ="4f"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(6)}">2pm-3pm</button>
-<button class="val" on:click ="{() => addVal(0,6)}" id ="0g"> {showVal(getLetter(0,6))} </button>
-<button class="val" on:click ="{() => addVal(1,6)}" id ="1g"> {showVal(getLetter(1,6))} </button>
-<button class="val" on:click ="{() => addVal(2,6)}" id ="2g"> {showVal(getLetter(2,6))} </button>
-<button class="val" on:click ="{() => addVal(3,)}" id ="3g"> {showVal(getLetter(3,6))} </button>
-<button class="val" on:click ="{() => addVal(4,6)}" id ="4g"> {showVal(getLetter(4,6))} </button>
+<button class="val" on:click ="{() => addVal(0,6)}" id ="0g"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,6)}" id ="1g"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,6)}" id ="2g"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,)}" id ="3g"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,6)}" id ="4g"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(7)}">3pm-4pm</button>
-<button class="val" on:click ="{() => addVal(0,7)}" id ="0h"> {showVal(getLetter(0,7))} </button>
-<button class="val" on:click ="{() => addVal(1,7)}" id ="1h"> {showVal(getLetter(1,7))} </button>
-<button class="val" on:click ="{() => addVal(2,7)}" id ="2h"> {showVal(getLetter(2,7))} </button>
-<button class="val" on:click ="{() => addVal(3,7)}" id ="3h"> {showVal(getLetter(3,7))} </button>
-<button class="val" on:click ="{() => addVal(4,7)}" id ="4h"> {showVal(getLetter(4,7))} </button>
+<button class="val" on:click ="{() => addVal(0,7)}" id ="0h"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,7)}" id ="1h"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,7)}" id ="2h"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,7)}" id ="3h"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,7)}" id ="4h"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(8)}">4pm-5pm</button>
-<button class="val" on:click ="{() => addVal(0,8)}" id ="0i"> {showVal(getLetter(0,8))} </button>
-<button class="val" on:click ="{() => addVal(1,8)}" id ="1i"> {showVal(getLetter(1,8))} </button>
-<button class="val" on:click ="{() => addVal(2,8)}" id ="2i"> {showVal(getLetter(2,8))} </button>
-<button class="val" on:click ="{() => addVal(3,8)}" id ="3i"> {showVal(getLetter(3,8))} </button>
-<button class="val" on:click ="{() => addVal(4,8)}" id ="4i"> {showVal(getLetter(4,8))} </button>
+<button class="val" on:click ="{() => addVal(0,8)}" id ="0i"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,8)}" id ="1i"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,8)}" id ="2i"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,8)}" id ="3i"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,8)}" id ="4i"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(9)}">5pm-6pm</button>
-<button class="val" on:click ="{() => addVal(0,9)}" id ="0j"> {showVal(getLetter(0,9))} </button>
-<button class="val" on:click ="{() => addVal(1,9)}" id ="1j"> {showVal(getLetter(1,9))} </button>
-<button class="val" on:click ="{() => addVal(2,9)}" id ="2j"> {showVal(getLetter(2,9))} </button>
-<button class="val" on:click ="{() => addVal(3,9)}" id ="3j"> {showVal(getLetter(3,9))} </button>
-<button class="val" on:click ="{() => addVal(4,9)}" id ="4j"> {showVal(getLetter(4,9))} </button>
+<button class="val" on:click ="{() => addVal(0,9)}" id ="0j"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,9)}" id ="1j"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,9)}" id ="2j"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,9)}" id ="3j"> {r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,9)}" id ="4j"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(10)}">6pm-7pm</button>
-<button class="val" on:click ="{() => addVal(0,10)}" id ="0k"> {showVal(getLetter(0,10))} </button>
-<button class="val" on:click ="{() => addVal(1,10)}" id ="1k"> {showVal(getLetter(1,10))} </button>
-<button class="val" on:click ="{() => addVal(2,10)}" id ="2k"> {showVal(getLetter(2,10))} </button>
-<button class="val" on:click ="{() => addVal(3,10)}" id ="3k"> {showVal(getLetter(3,10))} </button>
-<button class="val" on:click ="{() => addVal(4,10)}" id ="4k"> {showVal(getLetter(4,10))} </button>
+<button class="val" on:click ="{() => addVal(0,10)}" id ="0k"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,10)}" id ="1k"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,10)}" id ="2k"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,10)}" id ="3k"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,10)}" id ="4k"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(11)}">7pm-8pm</button>
-<button class="val" on:click ="{() => addVal(0,11)}" id ="0l"> {showVal(getLetter(0,11))} </button>
-<button class="val" on:click ="{() => addVal(1,11)}" id ="1l"> {showVal(getLetter(1,11))} </button>
-<button class="val" on:click ="{() => addVal(2,11)}" id ="2l"> {showVal(getLetter(2,11))} </button>
-<button class="val" on:click ="{() => addVal(3,11)}" id ="3l"> {showVal(getLetter(3,11))} </button>
-<button class="val" on:click ="{() => addVal(4,11)}" id ="4l"> {showVal(getLetter(4,11))} </button>
+<button class="val" on:click ="{() => addVal(0,11)}" id ="0l"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,11)}" id ="1l"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,11)}" id ="2l"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,11)}" id ="3l"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,11)}" id ="4l"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(12)}">8pm-9pm</button>
-<button class="val" on:click ="{() => addVal(0,12)}" id ="0m"> {showVal(getLetter(0,12))} </button>
-<button class="val" on:click ="{() => addVal(1,12)}" id ="1m"> {showVal(getLetter(1,12))} </button>
-<button class="val" on:click ="{() => addVal(2,12)}" id ="2m"> {showVal(getLetter(2,12))} </button>
-<button class="val" on:click ="{() => addVal(3,12)}" id ="3m"> {showVal(getLetter(3,12))} </button>
-<button class="val" on:click ="{() => addVal(4,12)}" id ="4m"> {showVal(getLetter(4,12))} </button>
+<button class="val" on:click ="{() => addVal(0,12)}" id ="0m"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,12)}" id ="1m"> {showVal(r["Tuesday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,12)}" id ="2m"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,12)}" id ="3m"> {showVal(r["Monday"]["11"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,12)}" id ="4m"> {showVal(r["Monday"]["11"]["code"])} </button>
 </ul>
 
 </div>
