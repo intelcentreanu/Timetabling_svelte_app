@@ -4,6 +4,8 @@ import {onMount} from 'svelte';
 export let reasonsInput;
 console.log(reasonsInput);
 let r = JSON.parse(reasonsInput);
+export let controlPrefix;
+console.log(controlPrefix);
 onMount( ()=>{
      dayList.forEach((day,indexX) =>{
         timeList2.forEach((slot,indexY) =>{
@@ -350,31 +352,33 @@ function addVal(x, y,colour=false) {
       if(!colour){
           document.getElementById(getId(x, y)).style.backgroundColor = "#fff";
           r[dayList[x]][timeList2[y]]["code"] = "none";
-          r[dayList[x]][timeList2[y]]["reason"] = "";}
+          r[dayList[x]][timeList2[y]]["reason"] = "";
+      }
 
   }
 
   r=r;
 
-  if(!colour){
-      prettyOutput();
-  }
+  let toReturn = prettyOutput();
+
+  //console.log(document.getElementById(cpUnv).valueOf());
+  document.getElementById(controlPrefix + '_unavailableTimes').value = JSON.stringify(r);
+  document.getElementById(controlPrefix + '_unavailableTimesText').value = toReturn;
   return false;
 }
 function prettyOutput(){
-    console.log("");
-    //Fixme
-    reasonLetter.forEach((day, y) =>{
-        day.forEach((cell,x) =>{
-            if(cell !=="none"){
-                let toReturn = "Not available at " + timeList[x] + " on " + dayList[y] + " because of " + r[dayList[x]][timeList2[y]]["reason"] + "(" + cell + ")";
+    let toReturn = "";
+    dayList.forEach((day) =>{
+        timeList2.forEach((cell) =>{
+            if(r[day][cell]["code"] !=="none"){
+                toReturn = toReturn + "Not available at " + cell + " on " + day + " because of " + r[day][cell]["reason"] + "(" + r[day][cell]["code"] + "). \n";
                 console.log(toReturn);
 
             }
 
         })
     });
-    console.log("");
+    return toReturn;
 
 
 }
@@ -384,7 +388,6 @@ function wholeHour(y) {
     addVal(i, y,true);
   }
   r=r;
-  prettyOutput();
 }
 
 function wholeDay(x) {
@@ -393,7 +396,6 @@ function wholeDay(x) {
   }
 
   r=r;
-  prettyOutput();
 }
 
 function showVal(v) {
@@ -631,6 +633,8 @@ margin:0;
 
 </style>
 <div class="app">
+<input type="hidden" id="{controlPrefix + '_unavailableTimes'}" value=""/>
+<input type="hidden" id="{controlPrefix + '_unavailableTimesText'}" value=""/>
 <div class="list">
 <label>
    <input class="vertical-align-middle" type=radio bind:group={chosen} value={reasons[0].label}>

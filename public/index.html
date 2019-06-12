@@ -290,6 +290,7 @@ let x = {
           }
         }
 ;
+let control = "Q66_timetable";
 let xString = JSON.stringify(x);
 (function(data) {
             var tim = new App({
@@ -304,7 +305,9 @@ let xString = JSON.stringify(x);
         })({
             id: "main",
             data:{
-                            reasonsInput: xString}
+                            reasonsInput: xString,
+                            controlPrefix:control
+            }
 
 
         });

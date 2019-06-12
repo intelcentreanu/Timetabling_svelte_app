@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5155ce8a-17c4-4923-8a6d-bab32660ffc8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/timetableCustomQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/timetableCustomQ.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
     </list>
@@ -118,19 +119,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="98" />
+          <entry key="html" value="171" />
           <entry key="js" value="48" />
           <entry key="json" value="148" />
-          <entry key="svelte" value="2089" />
-          <entry key="txt" value="126" />
+          <entry key="svelte" value="2620" />
+          <entry key="txt" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="148" />
           <entry key="JavaScript" value="48" />
-          <entry key="PLAIN_TEXT" value="126" />
-          <entry key="Svelte" value="2187" />
+          <entry key="PLAIN_TEXT" value="144" />
+          <entry key="Svelte" value="2791" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -163,8 +164,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="774" column="87" selection-start-line="774" selection-start-column="87" selection-end-line="774" selection-end-column="87" />
+            <state relative-caret-position="485">
+              <caret line="375" lean-forward="true" selection-start-line="375" selection-end-line="375" />
             </state>
           </provider>
         </entry>
@@ -190,15 +191,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5219">
-              <caret line="307" selection-start-line="307" selection-end-line="307" />
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -265,6 +257,10 @@
       <find>forEach</find>
       <find>addVal</find>
       <find>function p</find>
+      <find>reasonLett</find>
+      <find>for</find>
+      <find>getLett</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -284,8 +280,8 @@
         <option value="$PROJECT_DIR$/public/global.css" />
         <option value="$PROJECT_DIR$/exampleInput.json" />
         <option value="$PROJECT_DIR$/jsonString.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App.svelte" />
       </list>
     </option>
@@ -342,6 +338,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/u6061838/WebstormProjects/Timetabling_svelte_app_intelCentre/public/index.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
@@ -404,7 +401,7 @@
       <workItem from="1559525000656" duration="6065000" />
       <workItem from="1559880091674" duration="3218000" />
       <workItem from="1560229747824" duration="5212000" />
-      <workItem from="1560305692923" duration="1755000" />
+      <workItem from="1560305692923" duration="5190000" />
     </task>
     <task id="LOCAL-00001" summary="edited readme - removed intro lines">
       <created>1559107699674</created>
@@ -490,11 +487,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560233188633</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="table fixed - json">
+      <created>1560307638799</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1560307638799</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40406000" />
+    <option name="totallyTimeSpent" value="43841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="11" width="1658" height="1047" extended-state="0" />
@@ -539,7 +543,8 @@
     <MESSAGE value="added pretty output,&#10;&#10;handled multiple printing when entire row is clicked" />
     <MESSAGE value="about to change data type" />
     <MESSAGE value="button vals not updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="button vals not updating" />
+    <MESSAGE value="table fixed - json" />
+    <option name="LAST_COMMIT_MESSAGE" value="table fixed - json" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Timetable.svelte" />
@@ -581,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5219">
-          <caret line="307" selection-start-line="307" selection-end-line="307" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -601,9 +599,6 @@
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/timetableCustomQ.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -625,10 +620,20 @@
         <state relative-caret-position="-765" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="305" column="23" lean-forward="true" selection-start-line="305" selection-start-column="23" selection-end-line="305" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="774" column="87" selection-start-line="774" selection-start-column="87" selection-end-line="774" selection-end-column="87" />
+        <state relative-caret-position="485">
+          <caret line="375" lean-forward="true" selection-start-line="375" selection-end-line="375" />
         </state>
       </provider>
     </entry>
