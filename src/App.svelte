@@ -372,7 +372,6 @@ function prettyOutput(){
         timeList2.forEach((cell) =>{
             if(r[day][cell]["code"] !=="none"){
                 toReturn = toReturn + "Not available at " + cell + " on " + day + " because of " + r[day][cell]["reason"] + "(" + r[day][cell]["code"] + "). \n";
-                console.log(toReturn);
 
             }
 
