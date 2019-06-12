@@ -458,6 +458,57 @@ function getLetter(i,j){
     return r[day][time]["code"]
 }
 
+function tooltip(node, text) {
+		const tooltip = document.createElement('div');
+		tooltip.textContent = text;
+
+		Object.assign(tooltip.style, {
+			position: 'absolute',
+			background: 'black',
+			color: 'white',
+			padding: '0.5em 1em',
+			fontSize: '12px',
+			pointerEvents: 'none',
+			transform: 'translate(5px, -50%)',
+			borderRadius: '2px',
+			transition: 'opacity 0.4s'
+		});
+
+		function position() {
+			const { top, right, bottom } = node.getBoundingClientRect();
+			tooltip.style.top = `${(top + bottom) / 2}px`;
+			tooltip.style.left = `${right}px`;
+		}
+
+		function append() {
+			document.body.appendChild(tooltip);
+			tooltip.style.opacity = 0;
+			setTimeout(() => tooltip.style.opacity = 1);
+			position();
+		}
+
+		function remove() {
+			tooltip.remove();
+		}
+
+		node.addEventListener('mouseenter', append);
+		node.addEventListener('mouseleave', remove);
+
+		return {
+			update(text) {
+				tooltip.textContent = text;
+				position();
+			},
+
+			destroy() {
+				tooltip.remove();
+				node.removeEventListener('mouseenter', append);
+				node.removeEventListener('mouseleave', remove);
+			}
+		};
+	}
+
+
 </script>
 <style>
 app {
@@ -675,15 +726,15 @@ margin:0;
 </ul>
 <ul class =" calendar" >
 <button class="time" style="padding: 0; " on:click ="{() => wholeHour(0) }" >8am-9am</button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" id ="0a"> {showVal(r["Monday"]["8"]["code"])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" id ="1a"> {showVal(r["Tuesday"]["8"]["code"])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(2,0)}" id ="2a"> {showVal(r["Wednesday"]["8"]["code"])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" id ="3a"> {showVal(r["Thursday"]["8"]["code"])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" id ="4a"> {showVal(r["Friday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(0,0)}" use:tooltip={r["Monday"]["8"]["reason"]} id ="0a"> {showVal(r["Monday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" use:tooltip={r["Tuesday"]["8"]["reason"]} id ="1a"> {showVal(r["Tuesday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(2,0)}" use:tooltip={r["Wednesday"]["8"]["reason"]} id ="2a"> {showVal(r["Wednesday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" use:tooltip={r["Thursday"]["8"]["reason"]} id ="3a"> {showVal(r["Thursday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" use:tooltip={r["Friday"]["8"]["reason"]} id ="4a"> {showVal(r["Friday"]["8"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(1)}">9am-10am</button>
-<button class="val" on:click ="{() => addVal(0,1)}"  id ="0b"> {showVal(r["Monday"]["9"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(0,1)}"  use:tooltip={r["Monday"]["9"]["reason"]} id ="0b"> {showVal(r["Monday"]["9"]["code"])} </button>
 <button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(r["Tuesday"]["9"]["code"])} </button>
 <button class="val" on:click ="{() => addVal(2,1)}" id ="2b"> {showVal(r["Wednesday"]["9"]["code"])} </button>
 <button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(r["Thursday"]["9"]["code"])} </button>
@@ -742,7 +793,7 @@ margin:0;
 <button class="val" on:click ="{() => addVal(0,8)}" id ="0i"> {showVal(r["Monday"]["16"]["code"])} </button>
 <button class="val" on:click ="{() => addVal(1,8)}" id ="1i"> {showVal(r["Tuesday"]["16"]["code"])} </button>
 <button class="val" on:click ="{() => addVal(2,8)}" id ="2i"> {showVal(r["Wednesday"]["16"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(3,8)}" id ="3i"> {showVal(r["Monday"]["16"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,8)}" id ="3i"> {showVal(r["Thursday"]["16"]["code"])} </button>
 <button class="val" on:click ="{() => addVal(4,8)}" id ="4i"> {showVal(r["Friday"]["16"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
