@@ -458,7 +458,7 @@ function getLetter(i,j){
     return r[day][time]["code"]
 }
 
-function tooltip(node, text) {
+function tooltip(node, text, farLeft =false) {
 		const tooltip = document.createElement('div');
 		tooltip.textContent = text;
 
@@ -475,9 +475,12 @@ function tooltip(node, text) {
 		});
 
 		function position() {
-			const { top, right, bottom } = node.getBoundingClientRect();
+			const { top, right, bottom, left} = node.getBoundingClientRect();
 			tooltip.style.top = `${(top + bottom) / 2}px`;
-			tooltip.style.left = `${right}px`;
+			if(farLeft){
+			    tooltip.style.right =`${right - left - 10}px`;
+			}else{
+			    tooltip.style.left = `${right}px`;}
 		}
 
 		function append() {
@@ -730,23 +733,23 @@ margin:0;
 <button class="val" style="padding: 0; " on:click ="{() => addVal(1,0)}" use:tooltip={r["Tuesday"]["8"]["reason"]} id ="1a"> {showVal(r["Tuesday"]["8"]["code"])} </button>
 <button class="val" style="padding: 0; " on:click ="{() => addVal(2,0)}" use:tooltip={r["Wednesday"]["8"]["reason"]} id ="2a"> {showVal(r["Wednesday"]["8"]["code"])} </button>
 <button class="val" style="padding: 0; " on:click ="{() => addVal(3,0)}" use:tooltip={r["Thursday"]["8"]["reason"]} id ="3a"> {showVal(r["Thursday"]["8"]["code"])} </button>
-<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" use:tooltip={r["Friday"]["8"]["reason"]} id ="4a"> {showVal(r["Friday"]["8"]["code"])} </button>
+<button class="val" style="padding: 0; " on:click ="{() => addVal(4,0)}" use:tooltip={r["Friday"]["8"]["reason"],true} id ="4a"> {showVal(r["Friday"]["8"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(1)}">9am-10am</button>
-<button class="val" on:click ="{() => addVal(0,1)}"  use:tooltip={r["Monday"]["9"]["reason"]} id ="0b"> {showVal(r["Monday"]["9"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(1,1)}" id ="1b"> {showVal(r["Tuesday"]["9"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(2,1)}" id ="2b"> {showVal(r["Wednesday"]["9"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(3,1)}" id ="3b"> {showVal(r["Thursday"]["9"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(4,1)}" id ="4b"> {showVal(r["Friday"]["9"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(0,1)}" use:tooltip={r["Monday"]["9"]["reason"]} id ="0b"> {showVal(r["Monday"]["9"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,1)}" use:tooltip={r["Tuesday"]["9"]["reason"]} id ="1b"> {showVal(r["Tuesday"]["9"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,1)}" use:tooltip={r["Wednesday"]["9"]["reason"]} id ="2b"> {showVal(r["Wednesday"]["9"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,1)}" use:tooltip={r["Thursday"]["9"]["reason"]} id ="3b"> {showVal(r["Thursday"]["9"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,1)}" use:tooltip={r["Friday"]["9"]["reason"],true} id ="4b"> {showVal(r["Friday"]["9"]["code"])} </button>
 </ul>
 <ul class =" calendar" style="padding: 0 0">
 <button class="time" on:click ="{() => wholeHour(2)}">10am-11am</button>
-<button class="val" on:click ="{() => addVal(0,2)}" id ="0c"> {showVal(r["Monday"]["10"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(1,2)}" id ="1c"> {showVal(r["Tuesday"]["10"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(2,2)}" id ="2c"> {showVal(r["Wednesday"]["10"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(3,2)}" id ="3c"> {showVal(r["Thursday"]["10"]["code"])} </button>
-<button class="val" on:click ="{() => addVal(4,2)}" id ="4c"> {showVal(r["Friday"]["10"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(0,2)}" use:tooltip={r["Monday"]["10"]["reason"]} id ="0c"> {showVal(r["Monday"]["10"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(1,2)}" use:tooltip={r["Tuesday"]["10"]["reason"]} id ="1c"> {showVal(r["Tuesday"]["10"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(2,2)}" use:tooltip={r["Wednesday"]["10"]["reason"]} id ="2c"> {showVal(r["Wednesday"]["10"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(3,2)}" use:tooltip={r["Thursday"]["10"]["reason"]} id ="3c"> {showVal(r["Thursday"]["10"]["code"])} </button>
+<button class="val" on:click ="{() => addVal(4,2)}" use:tooltip={r["Friday"]["10"]["reason"],true} id ="4c"> {showVal(r["Friday"]["10"]["code"])} </button>
 </ul>
 <ul class =" calendar" >
 <button class="time" on:click ="{() => wholeHour(3)}">11am-12am</button>
