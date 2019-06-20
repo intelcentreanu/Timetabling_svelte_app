@@ -3,9 +3,18 @@ import "@babel/polyfill";
 import {onMount} from 'svelte';
 export let reasonsInput;
 export let controlPrefix;
+export let isRealtimeParentQuestion;
 export let states = [];
 export let hover = false;
 export let delCell = false;
+export let cyonStart = "4";  //time 
+export let cyonInterval = 30; //minutes
+export let unavailableTimes = "";
+export let unavailableTimesText = "";
+export let cyon = "";
+export let settings = "";
+export let r = {}
+alert(888)
 export let defaultTimes = {
 	"Monday":{
 	  "8":{
@@ -284,30 +293,60 @@ if (reasonsInput == "" || reasonsInput == "{}")
 	reasonsInput = JSON.stringify(defaultTimes);
 }
 
-let r = JSON.parse(reasonsInput);
+try {
+	settings = JSON.parse(settings);
+} catch (e) {
+	settings = {
+		chosen: "F",
+		fReason: "",
+		pReason: "",
+		iReason: "",
+		uReason: "",
+		oReason: ""
+	}
+}
+
+try {
+	r = JSON.parse(reasonsInput);
+} catch (e) {
+	reasonsInput = JSON.stringify(defaultTimes);
+	r = JSON.parse(reasonsInput);
+}
 
 states.push(reasonsInput);
 
-onMount( ()=>{
+onMount( ()=> {
+	unavailableTimes = JSON.stringify(r);
+	unavailableTimesText = prettyOutput();
+	cyon = cyonOutput();
+	
+	//if (sessionStorage.getItem("states") !== null) {
+	//	try {
+	//		states = JSON.parse(sessionStorage.getItem("states"));	
+	//	} catch (e) {}
+	//}
 });
 
 function clear() {
   r = JSON.parse(JSON.stringify(defaultTimes));
   states.push(JSON.stringify(defaultTimes));
+  outputData();
 }
 
-function undo() {
+function undo(save=false) {
   if (states.length === 1) return;
-
+  
   states.pop();
-
   r = JSON.parse(states[states.length - 1]);
+  
+  if (save) {
+	outputData();
+  }
 }
 
 
 var dayList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-var timeList2 = ["8",  "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19","20"];
-
+var timeList2 = ["8",  "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
 var timeList = ["8am - 9am",  "9am - 10am", "10am - 11am", "11am - 12pm", "12pm - 1pm", "1pm - 2pm", "2pm - 3pm", "3pm - 4pm", "4pm - 5pm", "5pm - 6pm", "6pm - 7pm", "7pm - 8pm","8pm - 9pm"];
 var yDictionary = {
   0: 'a',
@@ -353,25 +392,25 @@ function addVal(x, y, colour=false) {
 	r[dayList[x]][timeList2[y]]["code"] = "none";
 	r[dayList[x]][timeList2[y]]["reason"] = "";
   } else {
-	r[dayList[x]][timeList2[y]]["code"] = chosen;
-    r[dayList[x]][timeList2[y]]["reason"] = getReason(chosen);
+	r[dayList[x]][timeList2[y]]["code"] = settings.chosen;
+    r[dayList[x]][timeList2[y]]["reason"] = getReason(settings.chosen);
   }
   r[dayList[x]][timeList2[y]]["hover"] = hover;
 }
 
 function outputData() {
-  let unavailableTimesText = prettyOutput();
-  let cyon = cyonOutput();
-
   if (!hover) {
 	for (var x=0; x < 5; x++) {
 		for (var y=0; y < 13; y++) {
 			delete r[dayList[x]][timeList2[y]]["hover"];
 		}
 	}
-	document.getElementById(controlPrefix + '_unavailableTimes').value = JSON.stringify(r);
-	document.getElementById(controlPrefix + '_unavailableTimesText').value = unavailableTimesText;
-	document.getElementById(controlPrefix + '_cyon').value = cyon;
+	unavailableTimes = JSON.stringify(r);
+	unavailableTimesText = prettyOutput();
+	cyon = cyonOutput();
+	settingsString = JSON.stringify(settings);
+	//sessionStorage.setItem("states", JSON.stringify(states));
+	triggerRefresh();
   }
 }
 
@@ -380,22 +419,22 @@ function addValClick(x, y) {
 	undo()
   }
   hover = false;
-
+  
   delCell = false;
-
-  if (r[dayList[x]][timeList2[y]]["code"] === chosen && !r[dayList[x]][timeList2[y]]["hover"]) {
+  
+  if (r[dayList[x]][timeList2[y]]["code"] === settings.chosen && !r[dayList[x]][timeList2[y]]["hover"]) {
 	addVal(x, y, false);
   } else {
 	addVal(x, y, true);
   }
-
+  
   states.push(JSON.stringify(r));
   outputData();
 }
 
 function addValHoverEnter(x, y) {
-  delCell = r[dayList[x]][timeList2[y]]["code"] === chosen;
-
+  delCell = r[dayList[x]][timeList2[y]]["code"] === settings.chosen;
+  
   if (!delCell) {
 	hover = true;
 	addVal(x, y, true);
@@ -411,52 +450,49 @@ function addValHoverLeave(x, y) {
 }
 
 function prettyOutput(){
-    let toReturn = "";
+    let toReturn = [];
+	
     dayList.forEach((day) =>{
         timeList2.forEach((cell) =>{
             if(r[day][cell]["code"] !=="none"){
-                toReturn = toReturn + "Not available at " + cell + " on " + day + " because of " + r[day][cell]["reason"] + "(" + r[day][cell]["code"] + "). \n";
-
+                toReturn.push("Not available at " + cell + " on " + day + " because of " + r[day][cell]["reason"] + " (" + r[day][cell]["code"] + ").");
             }
-
         })
     });
-    return toReturn;
+    return toReturn.join("\n");
 }
 
 function cyonOutput() {
 	let toReturn = [];
-
+	
 	dayList.forEach((day) =>{
-        let dayTimes = "";
-		timeList2.forEach((cell) =>{
+        timeList2.forEach((cell) =>{
             if (r[day][cell]["code"] !== "none") {
-                dayTimes += "1 ";
+                toReturn.push(0);
             } else {
-				dayTimes += "0 ";
+				toReturn.push(1);
 			}
         })
-		toReturn.push(dayTimes.trim());
     });
-
-	return toReturn.join(",");
+	
+	return toReturn.join(" ");
 }
 
 function wholeHour(y) {
   var color = false;
-
+  
   for (var i = 0; i < 5; i++) {
-    if (r[dayList[i]][timeList2[y]]["code"] !== chosen) {
+    if (r[dayList[i]][timeList2[y]]["code"] !== settings.chosen) {
 		color = true;
 		break;
 	}
   }
-
+  
   for (var i = 0; i < 5; i++) {
     addVal(i, y, color);
   }
   states.push(JSON.stringify(r));
-
+  
   outputData();
 }
 
@@ -475,26 +511,26 @@ function wholeHourHoverEnter(y) {
 
 function wholeHourHoverLeave(y) {
   if (!hover) return;
-
+  
   hover = false;
   undo()
 }
 
 function wholeDay(x) {
   var color = false;
-
+  
   for (var i = 0; i < 13; i++) {
-    if (r[dayList[x]][timeList2[i]]["code"] !== chosen) {
+    if (r[dayList[x]][timeList2[i]]["code"] !== settings.chosen) {
 		color = true;
 		break;
 	}
   }
-
+  
   for (var i = 0; i < 13; i++) {
     addVal(x, i, color);
   }
   states.push(JSON.stringify(r));
-
+  
   outputData();
 }
 
@@ -513,17 +549,17 @@ function wholeDayHoverEnter(x) {
 
 function wholeDayHoverLeave(x) {
   if (!hover) return;
-
+  
   hover = false;
-
+  
   undo()
 }
 
 function showVal(v) {
   if (v["code"] === "none") {
     return "";
-  }
-
+  } 
+  
   return v["reason"] !== "" ? v["reason"] : v["code"];
 }
 
@@ -553,39 +589,33 @@ var reasons = [{
   reason: "",
   colour: "#FF871C"
 }];
-var chosen = "F";
-var fReason = "";
-var pReason = "";
-var iReason = "";
-var uReason = "";
-var oReason = "";
+var settingsString = "";
 
 "use strict";
 
-function getReason(chosen) {
+function getReason(chosen) {  
   let reason = null;
-
+  
   switch (chosen) {
-	case "F":
-		reason  = fReason;
+	case "F": 
+		reason  = settings.fReason;
 		break;
-	case "P":
-		reason  = pReason;
+	case "P": 
+		reason  = settings.pReason;
 		break;
-	case "I":
-		reason  = iReason;
+	case "I": 
+		reason  = settings.iReason;
 		break;
-	case "U":
-		reason  = uReason;
+	case "U": 
+		reason  = settings.uReason;
 		break;
-	case "O":
-		reason  = oReason;
+	case "O": 
+		reason  = settings.oReason;
 		break;
   }
-
+  
   return reason !== null ? reason : reasons[dict[chosen]].text;
 }
-
 </script>
 <style>
 .app {
@@ -753,7 +783,7 @@ dataTable{
 	 flex-grow: 1;
 }
 .action {
-	display: flex;
+	display: flex; 
 	flex-wrap: wrap;
 	justify-content: flex-end;
 }
@@ -775,49 +805,49 @@ ul{
 
 .delete {
 	cursor: not-allowed;
-
+	
 }
-
 </style>
 <div class="app">
-	<input type="text" id="{controlPrefix + '_unavailableTimes'}" value=""/>
-	<input type="text" id="{controlPrefix + '_unavailableTimesText'}" value=""/>
-	<input type="text" id="{controlPrefix + '_cyon'}" value=""/>
+	<input type="hidden" id="{controlPrefix + '_unavailableTimes'}" name="{controlPrefix + '_unavailableTimes'}" bind:value={unavailableTimes}/>
+	<input type="hidden" id="{controlPrefix + '_unavailableTimesText'}" name="{controlPrefix + '_unavailableTimesText'}" bind:value={unavailableTimesText}/>
+	<input type="hidden" id="{controlPrefix + '_cyon'}" name="{controlPrefix + '_cyon'}" bind:value={cyon}/>
+	<input type="hidden" id="{controlPrefix + '_settings'}" name="{controlPrefix + '_settings'}" bind:value={settingsString}/>
 	<div class="list">
 		<label>
-		   <input class="vertical-align-middle" type=radio bind:group={chosen} value={reasons[0].label}>
+		   <input class="vertical-align-middle" type=radio bind:group={settings.chosen} value={reasons[0].label}>
 		   <span class="box F "><strong>{reasons[0].label}</strong></span>
 		   <span class ="align-top">{reasons[0].text}</span>
-		   <input class="padding:0;" bind:value={fReason}>
+		   <input class="padding:0;" bind:value={settings.fReason}>
 		</label>
 		<label>
-		   <input type=radio bind:group={chosen} value={reasons[1].label}>
+		   <input type=radio bind:group={settings.chosen} value={reasons[1].label}>
 		   <span class="box P"><strong>{reasons[1].label}</strong></span>
 		   <span class ="align-top">{reasons[1].text}</span>
-		   <input class="padding:0;" bind:value={pReason}>
+		   <input class="padding:0;" bind:value={settings.pReason}>
 		</label>
 		<label>
-		   <input type=radio bind:group={chosen} value={reasons[2].label}>
+		   <input type=radio bind:group={settings.chosen} value={reasons[2].label}>
 		   <span class="box I"><strong>{reasons[2].label}</strong></span>
 		   <span class ="align-top">{reasons[2].text}</span>
-		   <input class="padding:0;" bind:value={iReason}>
+		   <input class="padding:0;" bind:value={settings.iReason}>
 		</label>
 		<label>
-		   <input type=radio bind:group={chosen} value={reasons[3].label}>
+		   <input type=radio bind:group={settings.chosen} value={reasons[3].label}>
 		   <span class="box U"><strong>{reasons[3].label}</strong></span>
 		   <span class ="align-top">{reasons[3].text}</span>
-		   <input class="padding:0;" bind:value={uReason}>
+		   <input class="padding:0;" bind:value={settings.uReason}>
 		</label>
 		<label>
-		   <input type=radio bind:group={chosen} value={reasons[4].label}>
+		   <input type=radio bind:group={settings.chosen} value={reasons[4].label}>
 		   <span class="box O"><strong>{reasons[4].label}</strong></span>
 		   <span class ="align-top">{reasons[4].text}</span>
-		   <input class="padding:0;" bind:value={oReason}>
+		   <input class="padding:0;" bind:value={settings.oReason}>
 		</label>
 	</div>
 
 	<div class="action">
-		<button class ="clear" on:click|stopPropagation|preventDefault="{()=>undo(this)}">Undo</button>
+		<button class ="clear" on:click|stopPropagation|preventDefault="{()=>undo(true)}">Undo</button>
 		<button class ="clear" on:click|stopPropagation|preventDefault="{()=>clear(this)}">Clear All</button>
 	</div>
 
@@ -843,3 +873,4 @@ ul{
 		{/each}
 	</div>
 </div>
+-->
